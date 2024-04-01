@@ -1,0 +1,22 @@
+.container {
+    padding-top: 6px;
+}
+
+.headerline {
+    background-color: rgb(243, 243, 243);
+    padding: 0px 2px 0px 5px;
+}
+.headertitle {
+    line-height: 24px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.line {
+    padding: 4px 5px 2px 5px;
+}
+
+.slds-table_cell-buffer tr>th:first-child, .slds-table_cell-buffer tr>td:first-child, .slds-table--cell-buffer tr>th:first-child, .slds-table--cell-buffer tr>td:first-child 
+{
+    padding-left: 5px;
+}

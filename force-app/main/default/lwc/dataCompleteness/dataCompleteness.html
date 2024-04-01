@@ -1,0 +1,113 @@
+<template>
+
+    <lightning-card title="Data Completeness Indicator" icon-name="standard:work_order_item">
+
+        <div class="slds-p-around_small container">
+
+            <template lwc:if={hasFields}>
+
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+                    <tr class="slds-is-selected" lwc:if={fieldSet.requiredFields.length}>
+                        <td colspan="3">
+                            <div class="headerline">
+                                <lightning-layout>
+                                    <lightning-layout-item>
+                                        <lightning-icon icon-name="utility:warning" size="small" variant="error"></lightning-icon>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item class="headertitle">
+                                        Required Fields ({fieldSet.requiredFields.length})
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                
+                            </div>                        
+                        </td>
+                    </tr>
+                    <template for:each={fieldSet.requiredFields} for:item="field">
+                    <tr key={field.name}>
+                        <td valign="top" width="45px">
+                            <div class="line slds-text-align_center">                            
+                                {field.index}
+                            </div>
+                        </td>
+                        <td valign="top">
+                            <div class="line">
+                                {field.label}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="line slds-cell-wrap">
+                                {field.description}
+                            </div>
+                        </td>
+                    </tr>
+                    </template>                            
+                    <tr class="slds-is-selected" lwc:if={fieldSet.optionalFields.length}>
+                        <td colspan="3">
+                            <div class="headerline">
+                                <lightning-layout>
+                                    <lightning-layout-item>
+                                        <lightning-icon icon-name="utility:info_alt" size="small" variant="warning"></lightning-icon>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item class="headertitle">
+                                        Optional Fields ({fieldSet.optionalFields.length})
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                
+                            </div>                        
+                        </td>
+                    </tr>
+                    <template for:each={fieldSet.optionalFields} for:item="field">
+                        <tr key={field.name}>
+                            <td valign="top" width="45px">
+                                <div class="line slds-text-align_center">                            
+                                    {field.index}
+                                </div>
+                            </td>
+                            <td valign="top">
+                                <div class="line">
+                                    {field.label}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="line slds-cell-wrap">
+                                    {field.description}
+                                </div>
+                            </td>
+                        </tr>
+                        </template>                                               
+                </table>
+
+            </template>
+
+            <template lwc:if={hasNoFields}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+                    <tr class="slds-is-selected">
+                        <td colspan="3">
+                            <div class="headerline">
+                                <lightning-layout multiple-rows>
+                                    <lightning-layout-item>
+                                        <lightning-icon icon-name="utility:success" size="small" variant="success"></lightning-icon>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item class="headertitle">
+                                        Data is complete, ready to send to SAP
+                                    </lightning-layout-item>
+                                    <!--<lightning-layout-item size="12" class="slds-align_absolute-center slds-p-around_small">
+                                        <lightning-button variant="brand" icon-name="utility:share" label="Send to SAP" title=""></lightning-button>
+                                    </lightning-layout-item>-->
+                                </lightning-layout>
+                                
+                            </div>                        
+                        </td>
+                    </tr>
+                </table>                
+            </template>
+
+            <template if:true={showSpinner}>
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </template>
+
+        </div>
+
+    </lightning-card>
+
+</template>
