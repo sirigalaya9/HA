@@ -16,7 +16,7 @@
     </values>
     <values>
         <field>overcast__ComponentDescriptor__c</field>
-        <value xsi:type="xsd:string">{&quot;sections&quot;:[],&quot;label&quot;:&quot;SAP Credit Status&quot;}</value>
+        <value xsi:type="xsd:string">{&quot;showRefreshButton&quot;:true,&quot;sections&quot;:[],&quot;navigationLabelType&quot;:&quot;&quot;,&quot;label&quot;:&quot;SAP Credit Status&quot;,&quot;isActive&quot;:true,&quot;autoRun&quot;:true}</value>
     </values>
     <values>
         <field>overcast__ComponentID__c</field>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Language Mapping</label>
+    <protected>false</protected>
+    <values>
+        <field>Value__c</field>
+        <value xsi:type="xsd:string">{
+  &quot;0&quot;: &quot;SR&quot;,
+  &quot;1&quot;: &quot;ZH&quot;,
+  &quot;2&quot;: &quot;TH&quot;,
+  &quot;3&quot;: &quot;KO&quot;,
+  &quot;4&quot;: &quot;RO&quot;,
+  &quot;5&quot;: &quot;SL&quot;,
+  &quot;6&quot;: &quot;HR&quot;,
+  &quot;7&quot;: &quot;MS&quot;,
+  &quot;8&quot;: &quot;UK&quot;,
+  &quot;a&quot;: &quot;AF&quot;,
+  &quot;A&quot;: &quot;AR&quot;,
+  &quot;b&quot;: &quot;IS&quot;,
+  &quot;c&quot;: &quot;CA&quot;,
+  &quot;C&quot;: &quot;CS&quot;,
+  &quot;D&quot;: &quot;DE&quot;,
+  &quot;d&quot;: &quot;SH&quot;,
+  &quot;E&quot;: &quot;EN&quot;,
+  &quot;F&quot;: &quot;FR&quot;,
+  &quot;G&quot;: &quot;EL&quot;,
+  &quot;H&quot;: &quot;HU&quot;,
+  &quot;I&quot;: &quot;IT&quot;,
+  &quot;J&quot;: &quot;JA&quot;,
+  &quot;K&quot;: &quot;DA&quot;,
+  &quot;L&quot;: &quot;PL&quot;,
+  &quot;M&quot;: &quot;ZF&quot;,
+  &quot;N&quot;: &quot;NL&quot;,
+  &quot;O&quot;: &quot;NO&quot;,
+  &quot;P&quot;: &quot;PT&quot;,
+  &quot;Q&quot;: &quot;SK&quot;,
+  &quot;R&quot;: &quot;RU&quot;,
+  &quot;S&quot;: &quot;ES&quot;,
+  &quot;T&quot;: &quot;TR&quot;,
+  &quot;U&quot;: &quot;FI&quot;,
+  &quot;V&quot;: &quot;SV&quot;,
+  &quot;Y&quot;: &quot;LV&quot;,
+  &quot;늄&quot;: &quot;1D&quot;,
+  &quot;늅&quot;: &quot;1E&quot;,
+  &quot;늆&quot;: &quot;1F&quot;,
+  &quot;늇&quot;: &quot;1G&quot;,
+  &quot;늉&quot;: &quot;1I&quot;,
+  &quot;느&quot;: &quot;1P&quot;,
+  &quot;늘&quot;: &quot;1X&quot;,
+  &quot;덅&quot;: &quot;3E&quot;,
+  &quot;덆&quot;: &quot;3F&quot;,
+  &quot;뎧&quot;: &quot;4G&quot;,
+  &quot;뎨&quot;: &quot;4H&quot;,
+  &quot;둥&quot;: &quot;6E&quot;,
+  &quot;딥&quot;: &quot;8E&quot;,
+  &quot;먍&quot;: &quot;EM&quot;,
+  &quot;뱋&quot;: &quot;KK&quot;,
+  &quot;쁩&quot;: &quot;VI&quot;
+}</value>
+    </values>
+</CustomMetadata>

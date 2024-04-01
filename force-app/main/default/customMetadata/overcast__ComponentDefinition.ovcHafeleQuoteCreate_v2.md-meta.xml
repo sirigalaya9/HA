@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Hafele Quote Create V2</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__APIEnabled__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__APISettings__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>overcast__ComponentDescriptor__c</field>
+        <value xsi:type="xsd:string">{&quot;showRefreshButton&quot;:true,&quot;showInNavigation&quot;:false,&quot;sections&quot;:[],&quot;navigationLabelType&quot;:&quot;&quot;,&quot;masterActionLink&quot;:{&quot;name&quot;:&quot;btn578853823&quot;,&quot;label&quot;:&quot;New Quote&quot;,&quot;action&quot;:{&quot;componentDef&quot;:&quot;ovcHafeleQuoteCreate_v2&quot;,&quot;component&quot;:&quot;SalesOrderPoster&quot;}},&quot;label&quot;:&quot;SAP Quotes&quot;,&quot;isActive&quot;:true,&quot;icon&quot;:&quot;standard:quotes&quot;,&quot;autoRun&quot;:true,&quot;actionButtons&quot;:[{&quot;name&quot;:&quot;btn1457081835&quot;,&quot;location&quot;:&quot;main&quot;,&quot;label&quot;:&quot;Create Quote&quot;},{&quot;name&quot;:&quot;btn1294293430&quot;,&quot;location&quot;:&quot;modal&quot;,&quot;label&quot;:&quot;View Order&quot;,&quot;action&quot;:{&quot;parameters&quot;:{&quot;SALES_DOCUMENTS&quot;:{&quot;VBELN&quot;:&quot;FIELD:BAPI_SALESORDER_CREATEFROMDAT2.SALESDOCUMENT&quot;}},&quot;componentDef&quot;:&quot;sapSalesOrderDetails&quot;,&quot;component&quot;:&quot;DetailViewer&quot;}}]}</value>
+    </values>
+    <values>
+        <field>overcast__ComponentID__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__CreatedDate__c</field>
+        <value xsi:type="xsd:dateTime">2024-03-23T03:28:46.000Z</value>
+    </values>
+    <values>
+        <field>overcast__Hidden__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__ID__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__Permissions__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__PluginClass__c</field>
+        <value xsi:type="xsd:string">OvcHafeleQuoteCreatePlugin</value>
+    </values>
+    <values>
+        <field>overcast__RequiredLicenses__c</field>
+        <value xsi:type="xsd:string">c7/qIXZZhwBjaDeWWaEAlKMQxgqwNMQ1zOKXf+Lhrm4YOhfmq6mKw9RaXRB6yQqdXO527cqt1anXMsJPENThxyhwQBYR3J+zXg33l7LvMcomk9E+gB876eOwKSGHJyqN</value>
+    </values>
+    <values>
+        <field>overcast__ScenarioName__c</field>
+        <value xsi:type="xsd:string">RT_SAP_Quotation_Create</value>
+    </values>
+    <values>
+        <field>overcast__isSLPRequired__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

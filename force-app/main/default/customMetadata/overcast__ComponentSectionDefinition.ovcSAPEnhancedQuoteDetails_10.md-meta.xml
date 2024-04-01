@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcSAPEnhancedQuoteDetails_10</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcSAPEnhancedQuoteDetails</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;useInfiniteScrolling&quot;:true,&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;ORDER_TEXTLINES_OUT&quot;,&quot;sectionType&quot;:&quot;TAB&quot;,&quot;parameterName&quot;:&quot;ORDER_TEXTLINES_OUT&quot;,&quot;label&quot;:&quot;ORDER_TEXTLINES_OUT&quot;,&quot;isEditable&quot;:false,&quot;fields&quot;:[{&quot;name&quot;:&quot;APPLOBJECT&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;APPLOBJECT&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;APPLOBJECT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;TEXT_NAME&quot;,&quot;length&quot;:70,&quot;label&quot;:&quot;TEXT_NAME&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;TEXT_NAME&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;TEXT_ID&quot;,&quot;length&quot;:4,&quot;label&quot;:&quot;TEXT_ID&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;TEXT_ID&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;LANGU&quot;,&quot;length&quot;:1,&quot;label&quot;:&quot;LANGU&quot;,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;LANGU&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;LANGU_ISO&quot;,&quot;length&quot;:2,&quot;label&quot;:&quot;LANGU_ISO&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;LANGU_ISO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;LINE_CNT&quot;,&quot;length&quot;:8,&quot;label&quot;:&quot;LINE_CNT&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;LINE_CNT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;LINE&quot;,&quot;length&quot;:132,&quot;label&quot;:&quot;LINE&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;LINE&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;FORMAT_COL&quot;,&quot;length&quot;:2,&quot;label&quot;:&quot;FORMAT_COL&quot;,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;FORMAT_COL&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;display&quot;:false,&quot;apiName&quot;:&quot;ORDER_TEXTLINES_OUT&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">ORDER_TEXTLINES_OUT</value>
+    </values>
+</CustomMetadata>

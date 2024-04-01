@@ -16,7 +16,7 @@
     </values>
     <values>
         <field>overcast__SourceFieldName__c</field>
-        <value xsi:type="xsd:string">ovcCreditControlArea__c</value>
+        <value xsi:type="xsd:string">overcast__SAP_CC_Area__c</value>
     </values>
     <values>
         <field>overcast__SourceField__c</field>

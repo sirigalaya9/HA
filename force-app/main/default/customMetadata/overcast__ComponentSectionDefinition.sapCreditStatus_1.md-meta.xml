@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>overcast__SectionDefinition__c</field>
-        <value xsi:type="xsd:string">{&quot;variantOptions&quot;:{&quot;valueLabel&quot;:&quot;Credit Consumed&quot;,&quot;value&quot;:&quot;FIELD:TOTAL_LIABILITIES&quot;,&quot;maximum&quot;:&quot;FIELD:CRED_LIMIT&quot;},&quot;structureType&quot;:&quot;STRUCTURE&quot;,&quot;structureName&quot;:&quot;PS_CREDIT_ACCOUNT_DETAIL_ALL&quot;,&quot;sectionType&quot;:&quot;PANEL&quot;,&quot;parameterName&quot;:&quot;PS_CREDIT_ACCOUNT_DETAIL_ALL&quot;,&quot;displayVariant&quot;:&quot;GAUGE&quot;,&quot;display&quot;:true,&quot;apiName&quot;:&quot;PS_CREDIT_ACCOUNT_DETAIL_ALL&quot;}</value>
+        <value xsi:type="xsd:string">{&quot;variantOptions&quot;:{&quot;maximum&quot;:&quot;FIELD:CRED_LIMIT&quot;,&quot;value&quot;:&quot;FIELD:TOTAL_LIABILITIES&quot;,&quot;valueLabel&quot;:&quot;Credit Consumed&quot;},&quot;structureType&quot;:&quot;STRUCTURE&quot;,&quot;structureName&quot;:&quot;PS_CREDIT_ACCOUNT_DETAIL_ALL&quot;,&quot;sectionType&quot;:&quot;PANEL&quot;,&quot;parameterName&quot;:&quot;PS_CREDIT_ACCOUNT_DETAIL_ALL&quot;,&quot;displayVariant&quot;:&quot;GAUGE&quot;,&quot;display&quot;:true,&quot;apiName&quot;:&quot;PS_CREDIT_ACCOUNT_DETAIL_ALL&quot;}</value>
     </values>
     <values>
         <field>overcast__StructureName__c</field>

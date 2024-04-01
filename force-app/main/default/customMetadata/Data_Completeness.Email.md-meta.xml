@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>Description__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">Email is required</value>
     </values>
     <values>
         <field>FieldApiName__c</field>
@@ -24,7 +24,7 @@
     </values>
     <values>
         <field>Sequence_Number__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:double">3.0</value>
     </values>
     <values>
         <field>Type__c</field>

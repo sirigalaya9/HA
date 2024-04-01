@@ -60,7 +60,7 @@
     </values>
     <values>
         <field>overcast__StaticValue__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">01s06000005lI80AAE</value>
     </values>
     <values>
         <field>overcast__isRequired__c</field>
