@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Create_Quote_Poster_7</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">Create_Quote_Poster</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">7.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;useInfiniteScrolling&quot;:true,&quot;uniformFieldWidth&quot;:true,&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;IT_TEXTE&quot;,&quot;showRowNumberColumn&quot;:true,&quot;sectionType&quot;:&quot;TAB&quot;,&quot;parameterName&quot;:&quot;IT_TEXTE&quot;,&quot;label&quot;:&quot;WS: Angebotsanlage/ändern Texte&quot;,&quot;isEditable&quot;:true,&quot;fields&quot;:[{&quot;name&quot;:&quot;RUNNPOSNO&quot;,&quot;length&quot;:3,&quot;label&quot;:&quot;Laufende Nummer&quot;,&quot;keyField&quot;:true,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;RUNNPOSNO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;ORDPOSNO&quot;,&quot;length&quot;:6,&quot;label&quot;:&quot;Positionsnummer des Vertriebsbeleges&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;ORDPOSNO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;TDID&quot;,&quot;length&quot;:4,&quot;label&quot;:&quot;Text-ID&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;TDID&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;TDFORMAT&quot;,&quot;length&quot;:2,&quot;label&quot;:&quot;Formatspalte&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;TDFORMAT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;TDLINE&quot;,&quot;length&quot;:132,&quot;label&quot;:&quot;Textzeile&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;TDLINE&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;displayVariant&quot;:&quot;TABLE&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;IT_TEXTE&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">IT_TEXTE</value>
+    </values>
+</CustomMetadata>

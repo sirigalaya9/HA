@@ -1,0 +1,51 @@
+.lgc-bg {
+    background-color: rgb(242 242 242);
+}
+
+.lgc-bg-inverse {
+    background-color: rgb(22 50 92);
+}
+
+.iconcolor {
+    --slds-c-icon-color-background: #FF5D2D;
+}
+
+.total-badge {
+    --slds-c-badge-color-background: #0176d340;
+}
+
+.iconcolor {
+    --slds-c-icon-color-background: #FF5D2D;
+}
+
+.removeiconcolor {
+    --slds-c-icon-color-foreground-default: firebrick;
+}
+
+.line-items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.footer {
+    background-color: #f0f0f0;
+    padding: 0.5rem;
+    position: sticky;
+    bottom: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-icon {
+    --sds-c-icon-color-foreground-default: orange;
+}
+
+.checkprice-iconcolor{
+    --slds-c-icon-color-foreground-default: #05A59A;
+}

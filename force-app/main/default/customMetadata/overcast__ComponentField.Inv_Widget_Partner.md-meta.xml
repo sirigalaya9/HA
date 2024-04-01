@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Inv Widget Partner</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__AllowStaticValueEmpty__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__AllowUserOverride__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__AutonumberFormat__c</field>
+        <value xsi:type="xsd:string">{0}</value>
+    </values>
+    <values>
+        <field>overcast__AutonumberIncrementalValue__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__AutonumberStartValue__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__Autonumber__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__ChildSourceField__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">sapInvoicesWidget</value>
+    </values>
+    <values>
+        <field>overcast__Field__c</field>
+        <value xsi:type="xsd:string">PARTNER_NUMBER</value>
+    </values>
+    <values>
+        <field>overcast__FilterType__c</field>
+        <value xsi:type="xsd:string">EQUALS</value>
+    </values>
+    <values>
+        <field>overcast__Parameter__c</field>
+        <value xsi:type="xsd:string">BAPI_WEBINVOICE_GETLIST</value>
+    </values>
+    <values>
+        <field>overcast__ParentFieldChildReference__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__ReferenceChildObject__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__ReferenceField__c</field>
+        <value xsi:type="xsd:string">overcast__SAP_Account_Identifier</value>
+    </values>
+    <values>
+        <field>overcast__StaticValue__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__isRequired__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

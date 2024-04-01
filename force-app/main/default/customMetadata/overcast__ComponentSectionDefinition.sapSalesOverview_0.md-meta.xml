@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>sapSalesOverview_0</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">sapSalesOverview</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">0.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;variantOptions&quot;:{&quot;startDate&quot;:&quot;FIELD:DOCUMENT_DATE&quot;,&quot;endDate&quot;:&quot;FIELD:DOCUMENT_DATE_TO&quot;,&quot;defaultOption&quot;:&quot;Current and Previous FY&quot;},&quot;structureType&quot;:&quot;STRUCTURE&quot;,&quot;structureName&quot;:&quot;BAPI_SALESORDER_GETLIST&quot;,&quot;sectionType&quot;:&quot;FILTER&quot;,&quot;parameterName&quot;:&quot;BAPI_SALESORDER_GETLIST&quot;,&quot;label&quot;:&quot;$Label.overcast.SelectionDateRange&quot;,&quot;isEditable&quot;:true,&quot;filterVariant&quot;:&quot;DATERANGE&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;DOCUMENT_DATE&quot;,&quot;length&quot;:8,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;DOCUMENT_DATE&quot;,&quot;apexType&quot;:&quot;DATEX&quot;},{&quot;name&quot;:&quot;DOCUMENT_DATE_TO&quot;,&quot;length&quot;:8,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;DOCUMENT_DATE_TO&quot;,&quot;apexType&quot;:&quot;DATEX&quot;}],&quot;display&quot;:true,&quot;apiName&quot;:&quot;BAPI_SALESORDER_GETLIST&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">BAPI_SALESORDER_GETLIST</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <masterLabel>Navigate Helper</masterLabel>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs> 
+        <targetConfig targets="lightning__RecordPage"> 
+            <property name="recordId" type="String" label="Record Id" description="Record Id of the parent"/>
+            <property name="objectApiName" type="String" label="Object Name" description="Enter the object name" /> 
+            <property name="actionName" type="String" label="Action Name" description="Enter the name of the action name to navigate - view,edit" />         
+            <property name="showChoice" type="Boolean" label="Show Choice" description="Show two buttons to navigate to, recordId2 is the second choice"/>
+            <property name="choiceLabel1" type="String" label="Choice Label 1" description="Only applicable if Show Choice is selected"/>
+            <property name="choiceLabel2" type="String" label="Choice Label 2" description="Only applicable if Show Choice is selected"/>
+            <property name="recordId2" type="String" label="Record Id for the 2nd choice" description="Only applicable if Show Choice is selected"/>
+        </targetConfig> 
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" type="String" label="Record Id" description="Record Id of the parent"/>            
+            <property name="objectApiName" type="String" label="Object Name" description="Enter the object name" /> 
+            <property name="actionName" type="String" label="Action Name" description="Enter the name of the action name to navigate - view,edit" />   
+            <property name="showChoice" type="Boolean" label="Show Choice" description="Show two buttons to navigate to, recordId2 is the second choice"/>
+            <property name="choiceLabel1" type="String" label="Choice Label 1" description="Only applicable if Show Choice is selected"/>
+            <property name="choiceLabel2" type="String" label="Choice Label 2" description="Only applicable if Show Choice is selected"/>
+            <property name="recordId2" type="String" label="Record Id for the 2nd choice" description="Only applicable if Show Choice is selected"/>                    
+        </targetConfig>            
+    </targetConfigs>     
+</LightningComponentBundle>

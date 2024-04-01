@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>sapInvoiceDetails_2</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">sapInvoiceDetails</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">2.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;useInfiniteScrolling&quot;:true,&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;WEBINVOICEITEMS&quot;,&quot;sectionType&quot;:&quot;TAB&quot;,&quot;parameterName&quot;:&quot;WEBINVOICEITEMS&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcItems&quot;,&quot;isEditable&quot;:false,&quot;fields&quot;:[{&quot;name&quot;:&quot;ITEM_NUMBER&quot;,&quot;length&quot;:6,&quot;label&quot;:&quot;$Label.overcast.ovcItem&quot;,&quot;keyField&quot;:true,&quot;format&quot;:&quot;####&quot;,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;ITEM_NUMBER&quot;,&quot;apexType&quot;:&quot;INTEGERX&quot;},{&quot;name&quot;:&quot;MATERIAL&quot;,&quot;length&quot;:12,&quot;label&quot;:&quot;$Label.overcast.ovcMaterial&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;MATERIAL&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;SHORT_TEXT&quot;,&quot;length&quot;:25,&quot;label&quot;:&quot;$Label.overcast.ovcDescription&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;SHORT_TEXT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;scale&quot;:3,&quot;precision&quot;:14,&quot;name&quot;:&quot;INV_QTY&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcInvoicedQty&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;INV_QTY&quot;,&quot;apexType&quot;:&quot;DECIMALX&quot;},{&quot;name&quot;:&quot;SALES_UNIT&quot;,&quot;length&quot;:3,&quot;label&quot;:&quot;$Label.overcast.ovcSalesUnit&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;descriptionSource&quot;:&quot;SAP_UOM__c&quot;,&quot;apiName&quot;:&quot;SALES_UNIT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;unitCode&quot;:&quot;CURRENCY_ISO&quot;,&quot;scale&quot;:2,&quot;precision&quot;:16,&quot;name&quot;:&quot;NETVAL_INV&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcNetValue&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;NETVAL_INV&quot;,&quot;apexType&quot;:&quot;CURRENCYX&quot;},{&quot;unitCode&quot;:&quot;CURRENCY_ISO&quot;,&quot;scale&quot;:2,&quot;precision&quot;:14,&quot;name&quot;:&quot;TAX_AMOUNT&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcTaxAmount&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;TAX_AMOUNT&quot;,&quot;apexType&quot;:&quot;CURRENCYX&quot;},{&quot;name&quot;:&quot;REF_DOC_NUMBER&quot;,&quot;linkTarget&quot;:{&quot;parameters&quot;:{&quot;navHelper&quot;:{&quot;key&quot;:&quot;FIELD:REF_DOC_NUMBER&quot;,&quot;helperField&quot;:&quot;FIELD:REF_DOC_CAT&quot;}},&quot;helperField&quot;:&quot;REF_DOC_CAT&quot;,&quot;componentDef&quot;:&quot;navHelper&quot;,&quot;component&quot;:&quot;DetailViewer&quot;},&quot;length&quot;:10,&quot;label&quot;:&quot;$Label.overcast.ovcReferenceDoc&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;REF_DOC_NUMBER&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;REF_DOC_ITEM&quot;,&quot;length&quot;:6,&quot;label&quot;:&quot;$Label.overcast.ovcReferenceItem&quot;,&quot;format&quot;:&quot;####&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;REF_DOC_ITEM&quot;,&quot;apexType&quot;:&quot;INTEGERX&quot;}],&quot;displayVariant&quot;:&quot;TABLE&quot;,&quot;display&quot;:true,&quot;apiName&quot;:&quot;WEBINVOICEITEMS&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">WEBINVOICEITEMS</value>
+    </values>
+</CustomMetadata>

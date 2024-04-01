@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>SAP Delivery Detail</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__APIEnabled__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__APISettings__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>overcast__ComponentDescriptor__c</field>
+        <value xsi:type="xsd:string">{&quot;showInNavigation&quot;:true,&quot;sections&quot;:[],&quot;navigationLabelType&quot;:&quot;dynamic&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcSAPDelivery&quot;,&quot;dynamicLabelOptions&quot;:{&quot;template&quot;:&quot;$Label.overcast.ovcSAPDeliveryNo&quot;,&quot;parameters&quot;:[&quot;TRIMFIELD:ET_DELIVERY_HEADER.VBELN&quot;]},&quot;actionButtons&quot;:[{&quot;name&quot;:&quot;btn338733581&quot;,&quot;label&quot;:&quot;$Label.overcast.Edit&quot;,&quot;action&quot;:{&quot;parameters&quot;:{&quot;BAPI_OUTB_DELIVERY_CHANGE&quot;:{&quot;DELIVERY&quot;:&quot;FIELD:ET_DELIVERY_HEADER.VBELN&quot;,&quot;ovcDocType&quot;:&quot;FIELD:ET_DELIVERY_HEADER.LFART&quot;},&quot;HEADER_DATA&quot;:{&quot;DELIV_NUMB&quot;:&quot;FIELD:ET_DELIVERY_HEADER.VBELN&quot;},&quot;HEADER_DEADLINES&quot;:{&quot;DELIV_NUMB&quot;:&quot;FIELD:ET_DELIVERY_HEADER.VBELN&quot;,&quot;ovcShipDate&quot;:&quot;FIELD:ET_DELIVERY_HEADER.LFDAT&quot;,&quot;TIMETYPE&quot;:&quot;WSHDRLFDAT&quot;},&quot;HEADER_CONTROL&quot;:{&quot;DELIV_NUMB&quot;:&quot;FIELD:ET_DELIVERY_HEADER.VBELN&quot;,&quot;DELIV_DATE_FLG&quot;:&quot;X&quot;}},&quot;navType&quot;:&quot;COMPONENT&quot;,&quot;componentOptions&quot;:{},&quot;componentDef&quot;:&quot;ovcSAPOutboundDeliveryChange&quot;,&quot;component&quot;:&quot;GeneralPoster&quot;}},{&quot;name&quot;:&quot;btn1462687148&quot;,&quot;label&quot;:&quot;$Label.overcast.Delete&quot;,&quot;action&quot;:{&quot;parameters&quot;:{&quot;HEADER_DATA&quot;:{&quot;DELIV_NUMB&quot;:&quot;FIELD:ET_DELIVERY_HEADER.VBELN&quot;},&quot;HEADER_CONTROL&quot;:{&quot;DELIV_NUMB&quot;:&quot;FIELD:ET_DELIVERY_HEADER.VBELN&quot;},&quot;BAPI_OUTB_DELIVERY_CHANGE&quot;:{&quot;DELIVERY&quot;:&quot;FIELD:ET_DELIVERY_HEADER.VBELN&quot;}},&quot;navType&quot;:&quot;DIALOG_COMPONENT&quot;,&quot;dialogOptions&quot;:{&quot;size&quot;:&quot;small&quot;,&quot;showCancelButton&quot;:false,&quot;label&quot;:&quot;$Label.overcast.ovcDeliveryDelete&quot;},&quot;componentOptions&quot;:{},&quot;componentDef&quot;:&quot;ovcSAPOutboundDeliveryDelete&quot;,&quot;component&quot;:&quot;GeneralPoster&quot;}}]}</value>
+    </values>
+    <values>
+        <field>overcast__ComponentID__c</field>
+        <value xsi:type="xsd:string">3</value>
+    </values>
+    <values>
+        <field>overcast__CreatedDate__c</field>
+        <value xsi:type="xsd:dateTime">2023-09-19T08:51:12.000Z</value>
+    </values>
+    <values>
+        <field>overcast__Hidden__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__ID__c</field>
+        <value xsi:type="xsd:string">7</value>
+    </values>
+    <values>
+        <field>overcast__Permissions__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__PluginClass__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__RequiredLicenses__c</field>
+        <value xsi:type="xsd:string">Haha/pKusLJuq9X9PWbRdVSTd6hFTLSFWr99P5UdHrh+kFFggyUtbIkAoF75HMaO7saaYrhRP5EqpI+SFtaVPkARjeRKgg5YuaZ/kptIqFtoYbmkpA9obZxcyvkXfWVM</value>
+    </values>
+    <values>
+        <field>overcast__ScenarioName__c</field>
+        <value xsi:type="xsd:string">sapDelivery</value>
+    </values>
+    <values>
+        <field>overcast__isSLPRequired__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

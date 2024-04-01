@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Z_SAP Quote Create</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__APIEnabled__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__APISettings__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>overcast__ComponentDescriptor__c</field>
+        <value xsi:type="xsd:string">{&quot;showRefreshButton&quot;:true,&quot;showInNavigation&quot;:false,&quot;sections&quot;:[],&quot;navigationLabelType&quot;:&quot;&quot;,&quot;masterActionLink&quot;:{&quot;name&quot;:&quot;btn300149721&quot;,&quot;label&quot;:&quot;New Quote&quot;,&quot;action&quot;:{&quot;componentDef&quot;:&quot;Z_SAP_Quote_Create&quot;,&quot;component&quot;:&quot;SalesOrderPoster&quot;}},&quot;label&quot;:&quot;New Quote&quot;,&quot;isActive&quot;:true,&quot;autoRun&quot;:true}</value>
+    </values>
+    <values>
+        <field>overcast__ComponentID__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__CreatedDate__c</field>
+        <value xsi:type="xsd:dateTime">2024-03-19T07:35:42.000Z</value>
+    </values>
+    <values>
+        <field>overcast__Hidden__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__ID__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__Permissions__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__PluginClass__c</field>
+        <value xsi:type="xsd:string">HafeleQuoteCreatePlugin_1</value>
+    </values>
+    <values>
+        <field>overcast__RequiredLicenses__c</field>
+        <value xsi:type="xsd:string">ZL7h7roeHbsZNg4WqlnaADqttXV2DOxwuBMQj52F2M1DD2keqnBnEa9NFa53cJfiKWpMjIpXNu6dO9h0KcGR2wgGf+Rxk9xVW9kqf+ZPZott7Xe1LGoZYCL6TAYpzZkt</value>
+    </values>
+    <values>
+        <field>overcast__ScenarioName__c</field>
+        <value xsi:type="xsd:string">RT_SAP_Quotation_Create</value>
+    </values>
+    <values>
+        <field>overcast__isSLPRequired__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

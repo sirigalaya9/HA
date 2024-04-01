@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>sapProductATP_0</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">sapProductATP</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">0.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;variantOptions&quot;:{&quot;inputSize&quot;:&quot;6&quot;},&quot;uniformFieldWidth&quot;:false,&quot;structureType&quot;:&quot;STRUCTURE&quot;,&quot;structureName&quot;:&quot;WMDVSX&quot;,&quot;showRowNumberColumn&quot;:true,&quot;sectionType&quot;:&quot;FILTER&quot;,&quot;parameterName&quot;:&quot;WMDVSX&quot;,&quot;label&quot;:&quot;&quot;,&quot;isEditable&quot;:true,&quot;filterVariant&quot;:&quot;&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;REQ_DATE&quot;,&quot;length&quot;:8,&quot;label&quot;:&quot;$Label.overcast.ovcRequiredDate&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;REQ_DATE&quot;,&quot;apexType&quot;:&quot;DATEX&quot;},{&quot;scale&quot;:3,&quot;precision&quot;:14,&quot;name&quot;:&quot;REQ_QTY&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcRequiredQuantity&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;REQ_QTY&quot;,&quot;apexType&quot;:&quot;DECIMALX&quot;},{&quot;name&quot;:&quot;DELKZ&quot;,&quot;length&quot;:2,&quot;label&quot;:&quot;MRP elmnt ind.&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;DELKZ&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;YLINE&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;Line index for internal table processing&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;YLINE&quot;,&quot;apexType&quot;:&quot;INTEGERX&quot;}],&quot;display&quot;:true,&quot;apiName&quot;:&quot;WMDVSX&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">WMDVSX</value>
+    </values>
+</CustomMetadata>

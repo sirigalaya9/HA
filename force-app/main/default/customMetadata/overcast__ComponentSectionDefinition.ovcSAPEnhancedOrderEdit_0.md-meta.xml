@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcSAPEnhancedOrderEdit_0</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcSAPEnhancedOrderEdit</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">0.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;uniformFieldWidth&quot;:true,&quot;structureType&quot;:&quot;STRUCTURE&quot;,&quot;structureName&quot;:&quot;BAPI_SALESORDER_CHANGE&quot;,&quot;sectionType&quot;:&quot;PANEL&quot;,&quot;parameterName&quot;:&quot;BAPI_SALESORDER_CHANGE&quot;,&quot;label&quot;:&quot;&quot;,&quot;isEditable&quot;:true,&quot;fields&quot;:[{&quot;name&quot;:&quot;BEHAVE_WHEN_ERROR&quot;,&quot;length&quot;:1,&quot;label&quot;:&quot;Error Handling&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;BEHAVE_WHEN_ERROR&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;INT_NUMBER_ASSIGNMENT&quot;,&quot;length&quot;:1,&quot;label&quot;:&quot;Internal Item Number Assignment&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;INT_NUMBER_ASSIGNMENT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;NO_STATUS_BUF_INIT&quot;,&quot;length&quot;:1,&quot;label&quot;:&quot;No Refresh of Status Buffer&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;NO_STATUS_BUF_INIT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;SALESDOCUMENT&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;Order Number&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;SALESDOCUMENT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;SIMULATION&quot;,&quot;length&quot;:1,&quot;label&quot;:&quot;Simulation Mode&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;SIMULATION&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;displayVariant&quot;:&quot;&quot;,&quot;display&quot;:false,&quot;apiName&quot;:&quot;BAPI_SALESORDER_CHANGE&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">BAPI_SALESORDER_CHANGE</value>
+    </values>
+</CustomMetadata>

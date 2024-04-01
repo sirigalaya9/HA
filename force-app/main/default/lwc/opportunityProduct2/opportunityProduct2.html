@@ -1,0 +1,359 @@
+<template>
+    <!--Header-->
+    <div class="slds-col modal-footer slds-modal__footer">
+        <lightning-layout>
+            <lightning-layout-item class="slds-text-result" size="5">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media slds-p-top_x-small">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container" title="custom">
+                                <lightning-icon class="iconcolor" icon-name="standard:product"
+                                    size="small"></lightning-icon>
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <h2 class="slds-card__header-title">
+                                <span
+                                    class="slds-card__header-link slds-truncate slds-m-right_small slds-truncate slds-align-middle"
+                                    title="Product">Opportunity Product ({numberOfRecords})</span>
+                            </h2>
+
+                        </div>
+                    </div>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="7" style="display: flex; align-items: center;justify-content: end;">
+                <lightning-button variant="neutral" label='Check Pricing' icon-name="utility:moneybag"
+                    class="slds-p-right_small" onclick={handleCheckPrice}
+                    disabled={disabledCheckPricing}></lightning-button>
+                <div>
+                    <lightning-input type="file" multiple="false" accept=".csv" onchange={handleFileInputChange}
+                        variant="label-hidden"></lightning-input>
+                </div>
+                <template if:true={hasFileRows}>
+                    <span class="slds-text-link_reset slds-text-link slds-p-left_small"
+                        onclick={handleShowUploadResult}>View Upload
+                        Result</span>
+                </template>
+            </lightning-layout-item>
+            <!--class="slds-align_absolute-center"-->
+
+            <!--<lightning-layout-item size="2" class="slds-text-result">
+                <lightning-button variant="neutral" label="Product Selection" icon-name="utility:list"
+                    onclick={handleAddProducts}></lightning-button>
+            </lightning-layout-item>-->
+        </lightning-layout>
+    </div>
+    <!--Header-->
+
+    <!--Body-->
+    <div>
+        <!--<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table_fixed-layout">-->
+        <table
+            class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-table_striped slds-max-medium-table_stacked-horizontal">
+            <thead>
+                <tr class="slds-text-title--caps" style="height:2rem">
+                    <th class="" scope="col" style="width:5%">
+                        <div class="slds-truncate" title="Product">No.</div>
+                    </th>
+                    <th class="" scope="col" style="width:25%">
+                        <div class="slds-truncate" title="Product"><span style="color:red">* </span>Product</div>
+                    </th>
+                    <th class="" scope="col" style="width:15%">
+                        <div class="slds-truncate" title="Description">Description</div>
+                    </th>
+                    <!--<th class="" scope="col" style="width:12%">
+                        <div class="slds-truncate" title="Product Code">Product Code</div>
+                    </th>-->
+                    <th class="" scope="col" style="width:8%">
+                        <div class="slds-truncate" title="OHAe">OHA</div>
+                    </th>
+                    <th class="" scope="col" style="width:12%">
+                        <div class="slds-truncate" title="Quantity"><span style="color:red">* </span>Quantity</div>
+                    </th>
+                    <!--<th class="" scope="col" style="width:8%">
+                        <div class="slds-truncate" title="List Price">List Price
+                        </div>
+                    </th>
+                    <th class="slds-cell-wrap" scope="col" style="width:8%">
+                        <div class="" title="Discount Percentage">Discount (%)</div>
+                    </th>-->
+                    <th class="" scope="col" style="width:12%">
+                        <div class="slds-truncate" title="Sales Price"><span style="color:red">* </span> Sales Price
+                        </div>
+                    </th>
+                    <th class="" scope="col" style="width:12%">
+                        <div class="slds-truncate" title="Total Price">Total Price
+                        </div>
+                    </th>
+                    
+                    <th class="" scope="col" style="width:10%">
+                        <div class="slds-truncate slds-text-align_center" title="Remove">Remove</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={items} for:item="item">
+                    <tr key={item.Id}>
+                        <td>
+                            {item.index}
+                        </td>
+                        <td data-label="Product Id">
+                            <lightning-record-edit-form object-api-name="OpportunityLineItem">
+                                <div class="slds-grid">
+                                    <div class="slds-col">
+                                        <template if:false={item.Id}>
+                                            <template if:true={item.selection}>
+                                                <c-lookup label="" data-name="Product2Id" data-index={item.index}
+                                                    errors={item.errors} onsearch={handleSearch}
+                                                    onselectionchange={handleSelectionChange}
+                                                    placeholder="Search Products..." scroll-after-n-items="10"
+                                                    selection={item.selection} required>
+                                                </c-lookup>
+                                            </template>
+                                            <template if:false={item.selection}>
+                                                <c-lookup label="" data-name="Product2Id" data-index={item.index}
+                                                    errors={item.errors} onsearch={handleSearch}
+                                                    onselectionchange={handleSelectionChange}
+                                                    placeholder="Search Products..." scroll-after-n-items="10" required>
+                                                </c-lookup>
+                                                <button
+                                                class="slds-button slds-button_icon slds-button_icon-border"
+                                                title="Select PCM Product" onclick={handleShowGenericProductSelectionForm} data-id={item.index}>                                        
+                                                    <lightning-icon icon-name="standard:hierarchy"
+                                                    alternative-text="Select PCM Product" variant="info"
+                                                    size="small" class="convert-icon">
+                                                    </lightning-icon>                      
+                                                </button>                                                  
+                                            </template>
+                                        </template>
+                                        <template if:true={item.Id}>
+                                            <div style="display: none">
+                                                <c-lookup label="" data-name="Product2Id" data-index={item.index}
+                                                    errors={item.errors} onsearch={handleSearch}
+                                                    onselectionchange={handleSelectionChange}
+                                                    placeholder="Search Products..." scroll-after-n-items="10"
+                                                    selection={item.selection} disabled>
+                                                </c-lookup>
+                                            </div>
+                                            <div class="slds-line-clamp" title="">
+                                                <a class="slds-cell-wrap" href={item.url} tabindex="-1" target="_blank"
+                                                    style="font-weight: bold;" data-id={item.Id}
+                                                    data-objname="OpportunityLineItem">{item.Product2.Name}</a>
+                                                    <div if:true={item.Product2.Generic__c} class="btn-convert">
+                                                        <button
+                                                        class="slds-button slds-button_icon slds-button_icon-border"
+                                                        title="Select PCM Product" onclick={handleShowGenericProductSelectionForm} data-id={item.Id}>                                        
+                                                            <lightning-icon icon-name="standard:hierarchy"
+                                                            alternative-text="Select PCM Product" variant="info"
+                                                            size="small" class="convert-icon">
+                                                            </lightning-icon>                      
+                                                        </button>     
+                                                    </div>                                                    
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </lightning-record-edit-form>
+                        </td>
+                        <td data-label="Product Description">
+
+                            <lightning-textarea name="productDescription" value={item.Description}
+                                variant="label-hidden" onchange={handleItemChange} data-field="Description"
+                                data-index={item.index} disabled>
+                            </lightning-textarea>
+
+                        </td>
+                        <!--<td data-label="Product Code" class="slds-text-align_center">
+                            <lightning-input type="text" name="ProductCode" value={item.Product2.ProductCode}
+                                variant="label-hidden" data-index={item.index} disabled
+                                title={item.Product2.ProductCode}></lightning-input>
+                        </td>-->
+                        <td data-label="OHA">
+                            <lightning-record-edit-form object-api-name="OpportunityLineItem">
+                                <lightning-input-field field-name="OHA__c" name="OHA__c" variant="label-hidden"
+                                    data-field="OHA__c" value={item.OHA__c} data-index={item.index}
+                                    onchange={handleItemChange} disabled={item.disabledOHA}>
+                                </lightning-input-field>
+                            </lightning-record-edit-form>
+                        </td>
+                        <td data-label="Quantity" class="slds-text-align_center">
+                            <lightning-input type="number" name="quantity" value={item.Quantity} variant="label-hidden"
+                                required="true" onchange={handleItemChange} data-field="Quantity" min="0"
+                                message-when-range-underflow="Must be positive"
+                                data-index={item.index}></lightning-input>
+                        </td>
+                        <!--<td data-label="List Price" class="slds-text-align_center">
+                            <div class="slds-truncate" title="">
+                                <lightning-input type="number" name="listPrice" value={item.ListPrice}
+                                    variant="label-hidden" step="0.01" onchange={handleItemChange}
+                                    data-field="ListPrice" data-index={item.index} disabled>
+                                </lightning-input>
+                            </div>
+                        </td>
+                        <td data-label="Discount %" class="slds-text-align_center">
+                            <div class="slds-truncate" title="">
+                                <lightning-input type="number" value={item.Discount__c} variant="label-hidden"
+                                    step="0.01" onchange={handleItemChange} data-field="Discount__c"
+                                    data-index={item.index} formatter="percent-fixed"
+                                    min="0" message-when-range-underflow="Must be positive"
+                                max="100" message-when-range-overflow="Can't be over 100%">>
+                                </lightning-input>
+                            </div>
+                        </td>-->
+                        <td data-label="Sales Price" class="slds-text-align_center">
+                            <!--<div class="slds-truncate center" title="">
+                                <lightning-icon if:true={item.is_Price_Locked__c} class="lockcolor slds-p-right_x-small" icon-name="utility:lock" size="x-small"
+                                    alternative-text="Lock" title="" style="cursor:pointer" onclick={handlePriceLocked}
+                                    data-index={item.index}></lightning-icon>
+                                    <lightning-icon if:false={item.is_Price_Locked__c} class=" slds-p-right_x-small" icon-name="utility:unlock" size="x-small"
+                                    alternative-text="Lock" title="" style="cursor:pointer" onclick={handlePriceLocked}
+                                    data-index={item.index}></lightning-icon>
+                                <lightning-input type="number" name="salesPrice" value={item.UnitPrice}
+                                    variant="label-hidden" step="0.01" required="true" onchange={handleItemChange}
+                                    data-field="UnitPrice" data-index={item.index}>
+                                </lightning-input>
+                                <lightning-icon if:true={item.is_SAP_Price__c} class="checkpriceiconcolor slds-p-left_x-small" icon-name="utility:success" size="x-small"
+                                    alternative-text="Price checked" title="Price checked" style="cursor:pointer"
+                                    data-index={item.index}></lightning-icon>
+                            </div>-->
+                            <div class="slds-truncate slds-grid slds-wrap center" title="">
+                                <!--<div class="slds-size_2-of-12">
+                                    <div class="slds-text-align_center">
+                                        <lightning-icon if:true={item.is_Price_Locked__c}
+                                            class="lockcolor slds-p-right_x-small" icon-name="utility:lock"
+                                            size="x-small" alternative-text="Lock" title="" style="cursor:pointer"
+                                            onclick={handlePriceLocked} data-index={item.index}></lightning-icon>
+                                        <lightning-icon if:false={item.is_Price_Locked__c} class=" slds-p-right_x-small"
+                                            icon-name="utility:unlock" size="x-small" alternative-text="Lock" title=""
+                                            style="cursor:pointer" onclick={handlePriceLocked}
+                                            data-index={item.index}></lightning-icon>
+                                    </div>
+                                </div>-->
+                                <div class="slds-size_9-of-12">
+                                    <div class="slds-text-align_center">
+                                        <lightning-input type="number" name="salesPrice" value={item.UnitPrice}
+                                            variant="label-hidden" step="0.01" required="true"
+                                            onchange={handleItemChange} data-field="UnitPrice" data-index={item.index} disabled>
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                                <div class="slds-size_3-of-12">
+                                    <div class="slds-text-align_center">
+                                        <lightning-icon if:true={item.is_SAP_Price__c}
+                                            class="checkpriceiconcolor slds-p-left_x-small" icon-name="utility:success"
+                                            size="x-small" alternative-text="Price checked" title="Price checked"
+                                            style="cursor:pointer" data-index={item.index}></lightning-icon>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                        <td data-label="Total Price" class="slds-text-align_center">
+
+                            <lightning-input type="number" name="totalPrice" value={item.TotalPrice}
+                                variant="label-hidden" step="0.01" required="true" onchange={handleItemChange}
+                                data-field="TotalPrice" data-index={item.index} disabled>
+                            </lightning-input>
+
+                        </td>
+                        
+                        <td>
+                            <div class="slds-text-align_center">
+                                <lightning-icon class="removeiconcolor" icon-name="utility:delete" size="small"
+                                    alternative-text="Remove" title="Remove" style="cursor:pointer" onclick={removeItem}
+                                    data-index={item.index}></lightning-icon>
+                            </div>
+                        </td>
+                    </tr>
+                </template>
+                <tr>
+                    <td colspan="10">
+                        <div class="slds-text-align_left">
+                            <lightning-button variant="brand" label="Add " icon-name="utility:add" icon-position="right"
+                                title="Add Product" onclick={addItem}></lightning-button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--<template if:true={showProductSelectionForm}>
+            <c-product-modal-wizard record-id={recordId}
+                oncloseform={handleHideProductSelectionForm} onaddproduct={handleAddProductSelection}> </c-product-modal-wizard>
+        </template>-->
+
+    </div>
+    <!--Body-->
+
+
+    <footer class="slds-col modal-footer slds-modal__footer" style="bottom: 40px;z-index: 10;margin-top: 20px;">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="4"></lightning-layout-item>
+            <lightning-layout-item size="4" class="slds-align_absolute-center">
+                <!--<b>Total Amount:</b>-->
+                <lightning-badge class="total-badge" label='Total Amount'
+                    icon-name="utility:moneybag"></lightning-badge>
+                &nbsp;
+                <lightning-formatted-number value={totalAmount} format-style="currency" currency-code={currencyIsoCode}
+                    currency-display-as="code">
+                </lightning-formatted-number>
+            </lightning-layout-item>
+            <lightning-layout-item size="4">
+                <lightning-button class="slds-p-right_small" variant="neutral" icon-name="utility:refresh"
+                    label="Refresh" onclick={refresh}></lightning-button>
+                &nbsp;
+                <lightning-button variant="brand" icon-name="utility:save" label="Save" title="Save Product(s)"
+                    onclick={handleSaveItems}>
+                </lightning-button>
+                <!--&nbsp;
+                <lightning-button variant="neutral" label="Save & Close" title="Save Product(s) and Close" onclick={handleSaveAndCloseItems}>
+                </lightning-button>    -->
+            </lightning-layout-item>
+        </lightning-layout>
+    </footer>
+
+    <template if:true={showSpinner}>
+        <lightning-spinner variant="brand" size="large">
+        </lightning-spinner>
+    </template>
+
+    <template if:true={showUploadResult}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small" aria-modal="true">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning-button-icon variant="bare-inverse" icon-name="utility:close"
+                        onclick={handleCloseUploadResult} alternative-text="Close" class="slds-modal__close"
+                        size="large">
+                    </lightning-button-icon>
+                    <h2 class="slds-modal__title slds-hyphenate">Upload Result</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-datatable key-field="key" hide-checkbox-column data={rows} columns={columns}
+                        resize-column-disabled="true" show-row-number-column="true"></lightning-datatable>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={handleCloseUploadResult}>Close</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template if:true={showGenericProductSelectionForm}>
+
+        <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container" style="width: 70%;max-width: 620px;min-width: 480px;">
+                <lightning-button-icon variant="bare-inverse" icon-name="utility:close"
+                onclick={handleCloseGenericProductSelectionForm} alternative-text="Close" class="slds-modal__close" size="large">
+                </lightning-button-icon>
+                <div class="slds-modal__content slds-modal__content_headless">
+                    <c-opportunity-product-convert item={selectedItem} oncloseform={handleCloseGenericProductSelectionForm}></c-opportunity-product-convert>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>     
+        
+    </template>      
+
+</template>

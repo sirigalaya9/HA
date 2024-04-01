@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcSAPSalesOrdersPerOppDetails_3</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcSAPSalesOrdersPerOppDetails</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">3.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;variantOptions&quot;:{&quot;foreignKey&quot;:&quot;ADDRESS&quot;,&quot;additionalSections&quot;:&quot;SECTIONS:ORDER_ADDRESS_OUT&quot;},&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;ORDER_PARTNERS_OUT&quot;,&quot;sortDirection&quot;:&quot;&quot;,&quot;sectionType&quot;:&quot;ACCORDION&quot;,&quot;parameterName&quot;:&quot;ORDER_PARTNERS_OUT&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcPartners&quot;,&quot;isEditable&quot;:false,&quot;fields&quot;:[{&quot;name&quot;:&quot;ITM_NUMBER&quot;,&quot;length&quot;:6,&quot;label&quot;:&quot;Item&quot;,&quot;keyField&quot;:false,&quot;format&quot;:&quot;####&quot;,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;ITM_NUMBER&quot;,&quot;apexType&quot;:&quot;INTEGERX&quot;},{&quot;name&quot;:&quot;PARTN_ROLE&quot;,&quot;length&quot;:20,&quot;label&quot;:&quot;$Label.overcast.ovcPartnerRole&quot;,&quot;keyField&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;descriptionSource&quot;:&quot;PartnerFunction__c&quot;,&quot;apiName&quot;:&quot;PARTN_ROLE&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;CUSTOMER&quot;,&quot;length&quot;:12,&quot;label&quot;:&quot;Customer&quot;,&quot;display&quot;:false,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;CUSTOMER&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;PERSON_NO&quot;,&quot;length&quot;:12,&quot;label&quot;:&quot;Personnel No.&quot;,&quot;display&quot;:false,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;PERSON_NO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;ADDRESS&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;Address&quot;,&quot;keyField&quot;:false,&quot;isEditable&quot;:false,&quot;display&quot;:false,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;ADDRESS&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;UNLOAD_PT&quot;,&quot;length&quot;:25,&quot;label&quot;:&quot;Unloading Point&quot;,&quot;display&quot;:false,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;UNLOAD_PT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;COUNTRYISO&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;Country&quot;,&quot;display&quot;:false,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;COUNTRYISO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;TRANSPZONE&quot;,&quot;length&quot;:20,&quot;label&quot;:&quot;Transportation Zone&quot;,&quot;display&quot;:false,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;TRANSPZONE&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;displayVariant&quot;:&quot;COMPOUND-DISPLAY&quot;,&quot;display&quot;:true,&quot;apiName&quot;:&quot;ORDER_PARTNERS_OUT&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">ORDER_PARTNERS_OUT</value>
+    </values>
+</CustomMetadata>

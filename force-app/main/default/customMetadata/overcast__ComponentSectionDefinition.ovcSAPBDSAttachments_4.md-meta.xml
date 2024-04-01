@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcSAPBDSAttachments_4</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcSAPBDSAttachments</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">4.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;useInfiniteScrolling&quot;:true,&quot;uniformFieldWidth&quot;:true,&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;SIGNATURE&quot;,&quot;showRowNumberColumn&quot;:true,&quot;sectionType&quot;:&quot;TAB&quot;,&quot;parameterName&quot;:&quot;SIGNATURE&quot;,&quot;label&quot;:&quot;&quot;,&quot;isEditable&quot;:true,&quot;fields&quot;:[{&quot;name&quot;:&quot;DOC_COUNT&quot;,&quot;length&quot;:8,&quot;label&quot;:&quot;Doc. counter&quot;,&quot;keyField&quot;:true,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;DOC_COUNT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;DOC_ID&quot;,&quot;length&quot;:42,&quot;label&quot;:&quot;Document ID&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;DOC_ID&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;DOC_VER_NO&quot;,&quot;length&quot;:8,&quot;label&quot;:&quot;Version number&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;DOC_VER_NO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;DOC_VAR_ID&quot;,&quot;length&quot;:8,&quot;label&quot;:&quot;Variant ID&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;DOC_VAR_ID&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;DOC_VAR_TG&quot;,&quot;length&quot;:2,&quot;label&quot;:&quot;Variant Tag&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;DOC_VAR_TG&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;COMP_COUNT&quot;,&quot;length&quot;:8,&quot;label&quot;:&quot;No. of components&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;COMP_COUNT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;PROP_NAME&quot;,&quot;length&quot;:25,&quot;label&quot;:&quot;Attribute Name&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;PROP_NAME&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;PROP_VALUE&quot;,&quot;length&quot;:64,&quot;label&quot;:&quot;Attribute Value&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;PROP_VALUE&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;displayVariant&quot;:&quot;TABLE&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;SIGNATURE&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">SIGNATURE</value>
+    </values>
+</CustomMetadata>

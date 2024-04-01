@@ -1,0 +1,90 @@
+<aura:component implements="lightning:actionOverride,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" controller="ProjectTeamController" access="global">
+    
+    <aura:attribute name="projectTeams" type="Project_Team__c[]"/>
+    <aura:attribute name="rowIndex" type="String"/> 
+    <aura:attribute name="parentRecordId" type="String"/>
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>
+    
+    <aura:attribute name="UserContext" type="String"/>
+    
+    <aura:html tag="style">
+        .slds-modal__container{
+        width: 100%;
+        max-width: 1000px;
+        padding: 0rem;} 
+    </aura:html>
+    
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_medium">
+    <div class="slds-modal__container">
+        <header class="slds-modal__header">
+            <lightning:buttonIcon iconName="utility:close"
+                                  onclick="{! c.cancel }"
+                                  alternativeText="Close this window"
+                                  variant="bare-inverse"
+                                  class="slds-modal__close"/>             
+            <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Add Project Team Members</h2>
+        </header>
+        
+        <div class="slds-modal__content slds-p-around_medium" style="min-height: 300px;">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_3-of-12">
+                    <h2 style="margin: 5px; margin-left: 30px; font-size: medium;"><span style="color:red">*</span> Team Role</h2>
+                </div>
+                <div class="slds-col slds-size_5-of-12">
+                    <h2 style="margin: 5px; margin-left: 35px; font-size: medium;"><span style="color:red">*</span> Team Member</h2>
+                </div>
+                <div class="slds-col slds-size_3-of-12">
+                    <h2 style="margin: 5px; margin-left: 0px; font-size: medium;"><span style="color:red">*</span> Project Access<br/></h2>
+                </div>                
+                <div class="slds-col slds-size_1-of-12">
+                </div>
+            </div>
+            
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                <tbody>
+                    <aura:iteration items="{!v.projectTeams}" var="projectTeam" indexVar="index">
+                        <!--<c:ProjectTeam projectTeam="{!projectTeam}" rowIndex="{!index}" />-->
+                        <lightning:recordEditForm aura:id="recordEditForm"
+                                                  objectApiName="Project_Team__c"
+                                                  onsubmit="{!c.handleSubmit}">
+                            <tr>
+                                <td style="width: 300px;">
+                                    <lightning:inputField aura:id="RoleField" fieldName="Team_Role__c" variant="label-hidden" required="true" messageWhenValueMissing="Enter Team Role"/>  
+                                </td>
+                                <td style="width: 400px;">
+                                    <lightning:inputField aura:id="MemberField" fieldName="Team_Member__c" variant="label-hidden" required="true" messageWhenValueMissing="Enter Team Member"/>
+                                </td>
+                                <td style="width: 300px;">
+                                    <lightning:inputField aura:id="AccessField" fieldName="Project_Access__c" variant="label-hidden" required="true" messageWhenValueMissing="Enter Project Access"/>  
+                                </td>                                
+                                <td style="display:none;">
+                                    <lightning:inputField fieldName="Project__c" value="{!v.parentRecordId}"/>
+                                </td>
+                                <td>
+                                    <a onclick="{!c.removeDeletedRow}" id="{!index}">
+                                        <lightning:icon variant="error" iconName="utility:delete" class="slds-icon slds-icon_small" size="small" alternativeText="icon"/>
+                                        <span class="slds-assistive-text">Delete Icon</span>
+                                    </a>
+                                </td>
+                            </tr>    
+                        </lightning:recordEditForm>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </div>
+        
+        <footer class="slds-modal__footer slds-modal__footer_directional">
+            <button class="slds-button slds-button_neutral" onclick="{!c.doAdd}">Add Row</button>
+            
+        </footer>
+        
+        <footer class="slds-modal__footer">
+            <button class="slds-button slds-button_neutral" onclick="{!c.cancel}">Cancel</button>
+            <button class="slds-button slds-button_brand" onclick="{!c.submit}">Save</button>
+        </footer>
+    </div>
+    </section>
+    
+    <div class="slds-backdrop slds-backdrop_open"></div>
+    
+</aura:component>

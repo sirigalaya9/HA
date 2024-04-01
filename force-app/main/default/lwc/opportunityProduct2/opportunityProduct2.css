@@ -1,0 +1,47 @@
+.iconcolor{
+    --slds-c-icon-color-background: #FF5D2D;
+    }
+
+.total-badge {
+        --slds-c-badge-color-background: #0176d340;
+    }
+
+.removeiconcolor{
+    --slds-c-icon-color-foreground-default: firebrick;
+}
+
+.checkpriceiconcolor{
+    --slds-c-icon-color-foreground-default: #05A59A;
+}
+
+.lockcolor{
+    --slds-c-icon-color-foreground-default: #B55E5C;
+}
+
+.unlockcolor{
+    --slds-c-icon-color-foreground-default: #696969;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-convert {
+    vertical-align: -webkit-baseline-middle;
+    display: inline-block;
+    float: right; 
+}
+.slds-line-clamp a {
+    vertical-align: -webkit-baseline-middle;
+}
+.btn-convert button {
+    border: none;
+    float: right;   
+    --slds-c-button-text-color: red;
+}
+.btn-convert .convert-icon {    
+    --sds-c-icon-color-background: white;
+    --sds-c-icon-color-foreground: orange;
+}

@@ -1,0 +1,12 @@
+<template>
+    <template if:true={isDesktop}>
+        <c-opportunity-product record-id={recordId}></c-opportunity-product>
+        <!--<c-opportunity-product-mobile record-id={recordId}></c-opportunity-product-mobile>-->
+    </template>
+    <template if:true={isTablet}>
+        <c-opportunity-product-mobile record-id={recordId}></c-opportunity-product-mobile>
+    </template>
+    <template if:true={isMobile}>
+        <c-opportunity-product-mobile record-id={recordId}></c-opportunity-product-mobile>
+    </template>
+</template>

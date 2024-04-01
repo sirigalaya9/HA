@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>SAP Sales Orders Widget by Opp w/o Order</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__APIEnabled__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__APISettings__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>overcast__ComponentDescriptor__c</field>
+        <value xsi:type="xsd:string">{&quot;showRefreshButton&quot;:true,&quot;sections&quot;:[],&quot;navigationLabelType&quot;:&quot;&quot;,&quot;masterActionLink&quot;:{&quot;name&quot;:&quot;btn301110165&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcViewAll&quot;,&quot;action&quot;:{&quot;componentDef&quot;:&quot;ovcSAPSalesOrdersPerOppWoOrderList&quot;,&quot;component&quot;:&quot;ListViewer&quot;}},&quot;label&quot;:&quot;$Label.overcast.ovcSAPSalesOrderStatic&quot;,&quot;isActive&quot;:true,&quot;dynamicLabelOptions&quot;:{&quot;template&quot;:&quot;$Label.overcast.ovcSAPSalesOrders&quot;,&quot;parameters&quot;:[&quot;COUNT:ORDER_HEADERS_OUT&quot;]},&quot;autoRun&quot;:true}</value>
+    </values>
+    <values>
+        <field>overcast__ComponentID__c</field>
+        <value xsi:type="xsd:string">50084</value>
+    </values>
+    <values>
+        <field>overcast__CreatedDate__c</field>
+        <value xsi:type="xsd:dateTime">2023-09-21T11:24:11.000Z</value>
+    </values>
+    <values>
+        <field>overcast__Hidden__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__ID__c</field>
+        <value xsi:type="xsd:string">50190</value>
+    </values>
+    <values>
+        <field>overcast__Permissions__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__PluginClass__c</field>
+        <value xsi:type="xsd:string">OvcSAPSalesOrdersPerOppWoOrderPlugin</value>
+    </values>
+    <values>
+        <field>overcast__RequiredLicenses__c</field>
+        <value xsi:type="xsd:string">IzXTxVFhuNMVDOCBkaRzQBzeEDLGx9y27uT4hK3WMEJ9TwdhcVc7aOJo1M0xm9iWFfRExxfhzGuFiKP8LPaU1HckKhjcgBb9FnN51jZW8aPiFFEoByLjuQwsUTTgBpunMMdKICcGetFEKp7gMiAXF9wq3ntPoORMyJ6VFVqhpLY=</value>
+    </values>
+    <values>
+        <field>overcast__ScenarioName__c</field>
+        <value xsi:type="xsd:string">sapSalesOrderDetail</value>
+    </values>
+    <values>
+        <field>overcast__isSLPRequired__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

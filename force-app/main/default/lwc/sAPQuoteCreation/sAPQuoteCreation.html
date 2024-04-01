@@ -1,0 +1,132 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <lightning-modal-header label="Create Quote"></lightning-modal-header>
+  <lightning-modal-body>
+    <lightning-spinner if:true={showSpinner} variant="brand"></lightning-spinner>
+    <lightning-record-edit-form object-api-name="Quote" record-id={recordId} density="comfy">
+
+      <lightning-card title="Header">
+        <lightning-layout multiple-rows="true" horizontal-align="center">
+          <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="Sales_Organization__c"> </lightning-input-field>
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="Sales_Office__c"> </lightning-input-field>
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="Customer_PO_Number__c" onchange={handleInputChange}> </lightning-input-field>
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="Division__c"> </lightning-input-field>
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="Distribution_Channel__c"> </lightning-input-field>
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="zDiscount__c" onchange={handleInputChange}> </lightning-input-field>
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class="">
+            <!-- <lightning-input-field field-name="Incoterms_1__c"> </lightning-input-field> -->
+            <div class="slds-form-element slds-form-element_stacked">
+              <label class="slds-form-element__label" for="Incoterms">Incoterms</label>
+              <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                <input type="text" id="Incoterms" class="slds-input" value={incotermsId} />
+                <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Incoterms"
+                  onclick={getIncoterms}>
+                  <lightning-icon icon-name="utility:search" alternative-text="Incoterms"
+                    size="x-small"></lightning-icon>
+                  <span class="slds-assistive-text">Incoterms</span>
+                </button>
+                <!-- <lightning-button-icon icon-name="utility:search" onclick={getShipTo}
+                        alternative-text="Ship To" class="slds-input__icon slds-input__icon_right" size="small">
+                      </lightning-button-icon> -->
+              </div>
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="Incoterms_2__c" onchange={handleInputChange}> </lightning-input-field>
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class=""></lightning-layout-item>
+        </lightning-layout>
+      </lightning-card>
+      <lightning-card title="Partner" if:true={isLoaded}>
+        <lightning-layout multiple-rows="true" horizontal-align="left">
+          <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="AccountId"> </lightning-input-field>
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class="">
+            <!-- <lightning-input-field field-name="Ship_To__c"> </lightning-input-field> -->
+
+
+            <div class="slds-form-element slds-form-element_stacked">
+              <label class="slds-form-element__label" for="horizontal-form-element-id-03">Ship To</label>
+              <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                <input type="text" id="horizontal-form-element-id-03" class="slds-input" value={shipToName} />
+                <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Ship To"
+                  onclick={getShipTo}>
+                  <lightning-icon icon-name="utility:search" alternative-text="Approved"
+                    size="x-small"></lightning-icon>
+                  <span class="slds-assistive-text">Ship To</span>
+                </button>
+                <!-- <lightning-button-icon icon-name="utility:search" onclick={getShipTo}
+                        alternative-text="Ship To" class="slds-input__icon slds-input__icon_right" size="small">
+                      </lightning-button-icon> -->
+              </div>
+            </div>
+
+
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class=""></lightning-layout-item>
+          <lightning-layout-item size="4" class="slds-var-p-left_small">
+            <div>
+              Address
+            </div>
+            <div>
+              {quote.fields.BillingStreet.value}
+            </div>
+            <div>
+              {quote.fields.BillingCity.value}
+            </div>
+            <div>
+              {quote.fields.BillingState.value}
+            </div>
+            <div>
+              {quote.fields.BillingPostalCode.value} {quote.fields.BillingCountry.value}
+            </div>
+
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class="slds-var-p-left_small" if:true={shipTo}>
+            <div>
+              Address
+            </div>
+            <div>
+              {shipTo.BillingStreet}
+            </div>
+            <div>
+              {shipTo.BillingCity}
+            </div>
+            <div>
+              {shipTo.BillingState}
+            </div>
+            <div>
+              {shipTo.BillingPostalCode} {shipTo.BillingCountry}
+            </div>
+
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class=""></lightning-layout-item>
+        </lightning-layout>
+      </lightning-card>
+
+    </lightning-record-edit-form>
+
+  </lightning-modal-body>
+  <lightning-modal-footer>
+    <div class="footer-buttons">
+      <div class="right-buttons">
+        <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+        <lightning-button label="Create Quote" variant="brand" onclick={handleCreateQuote} class="slds-var-p-left_medium"></lightning-button>
+      </div>
+    </div>
+  </lightning-modal-footer>
+  <c-event-passer></c-event-passer>
+</template>

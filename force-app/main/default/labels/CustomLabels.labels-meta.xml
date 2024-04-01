@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>BTN_OpportunityLineItem_Add</fullName>
+        <categories>OpportunityProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BTN OpportunityLineItem Add</shortDescription>
+        <value>Add</value>
+    </labels>
+    <labels>
+        <fullName>BTN_OpportunityLineItem_Refresh</fullName>
+        <categories>OpportunityProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BTN OpportunityLineItem Refresh</shortDescription>
+        <value>Refresh</value>
+    </labels>
+    <labels>
+        <fullName>BTN_OpportunityLineItem_Save</fullName>
+        <categories>OpportunityProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BTN OpportunityLineItem Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>LBL_OpportunityLineItem_TotalAmount</fullName>
+        <categories>OpportunityProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LBL OpportunityLineItem TotalAmount</shortDescription>
+        <value>Total Amount</value>
+    </labels>
+    <labels>
+        <fullName>BTN_QuoteLineItem_Add</fullName>
+        <categories>QuoteProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BTN QuoteLineItem Add</shortDescription>
+        <value>Add</value>
+    </labels>
+    <labels>
+        <fullName>BTN_QuoteLineItem_CheckPricingATP</fullName>
+        <categories>QuoteProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BTN QuoteLineItem CheckPricingATP</shortDescription>
+        <value>Check Pricing &amp; Availability</value>
+    </labels>
+    <labels>
+        <fullName>BTN_QuoteLineItem_Refresh</fullName>
+        <categories>QuoteProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BTN QuoteLineItem Refresh</shortDescription>
+        <value>Refresh</value>
+    </labels>
+    <labels>
+        <fullName>BTN_QuoteLineItem_Save</fullName>
+        <categories>QuoteProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BTN QuoteLineItem Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>LBL_QuoteLineItem_No</fullName>
+        <categories>QuoteProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LBL QuoteLineItem No</shortDescription>
+        <value>No.</value>
+    </labels>
+    <labels>
+        <fullName>LBL_QuoteLineItem_TotalAmount</fullName>
+        <categories>QuoteProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LBL QuoteLineItem TotalAmount</shortDescription>
+        <value>Total Amount</value>
+    </labels>
+    <labels>
+        <fullName>Producthierarchy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Hierarchy</shortDescription>
+        <value>Product Hierarchy</value>
+    </labels>
+    <labels>
+        <fullName>Tittle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tittle</shortDescription>
+        <value>Tittle</value>
+    </labels>
+    <labels>
+        <fullName>LBL_OpportunityLineItem_No</fullName>
+        <categories>OpportunityProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LBL OpportunityLineItem No</shortDescription>
+        <value>No.</value>
+    </labels>
+    <labels>
+        <fullName>BTN_OpportunityLineItem_CheckPricing</fullName>
+        <categories>OpportunityProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BTN_OpportunityLineItem_CheckPricing</shortDescription>
+        <value>Check Pricing</value>
+    </labels>
+    <labels>
+        <fullName>LBL_OpportunityLineItem_Remove</fullName>
+        <categories>OpportunityProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LBL OpportunityLineItem Remove</shortDescription>
+        <value>Remove</value>
+    </labels>
+    <labels>
+        <fullName>LBL_OpportunityLineItem_SelectGenericProduct</fullName>
+        <categories>OpportunityProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LBL OpportunityLineItem SelectGenericProduct</shortDescription>
+        <value>Select PCM Product</value>
+    </labels>
+    <labels>
+        <fullName>LBL_QuoteLineItem_Remove</fullName>
+        <categories>QuoteProducts LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LBL QuoteLineItem Remove</shortDescription>
+        <value>Remove</value>
+    </labels>
+</CustomLabels>

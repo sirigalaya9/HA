@@ -1,0 +1,5 @@
+.slds-quick-action-panel-body-custom {
+    min-height: 240px;
+    max-height: 500px;    
+    overflow: initial;
+}

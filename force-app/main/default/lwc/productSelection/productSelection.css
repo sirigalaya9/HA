@@ -1,0 +1,17 @@
+.yellowButton {
+    --slds-c-button-brand-color-background: var(--c-example-purple);
+    --slds-c-button-brand-color-background-hover: var(--c-example-purple);
+    --slds-c-button-brand-color-border: var(--c-example-purple);
+    --slds-c-button-brand-color-border-hover: var(--c-example-purple);
+    --slds-c-button-brand-text-color: var(--c-example-white);
+}
+
+.top-filter{
+    display: flex;
+    flex-grow:1;
+    justify-content: center;
+}
+
+.top-filter > *{
+    min-width: 25%;
+}

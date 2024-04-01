@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcGeneralMaterialData_0</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcGeneralMaterialData</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">0.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;uniformFieldWidth&quot;:true,&quot;structureType&quot;:&quot;STRUCTURE&quot;,&quot;structureName&quot;:&quot;MARA&quot;,&quot;sectionType&quot;:&quot;FILTER&quot;,&quot;parameterName&quot;:&quot;MARA&quot;,&quot;label&quot;:&quot;Query Parameters&quot;,&quot;isEditable&quot;:true,&quot;filterVariant&quot;:&quot;QUERY&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;MATNR&quot;,&quot;length&quot;:18,&quot;label&quot;:&quot;Material&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;MATNR&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;ERSDA&quot;,&quot;length&quot;:8,&quot;label&quot;:&quot;Erstellt am&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;ERSDA&quot;,&quot;apexType&quot;:&quot;DATEX&quot;},{&quot;name&quot;:&quot;ERNAM&quot;,&quot;length&quot;:12,&quot;label&quot;:&quot;Angelegt von&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;ERNAM&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;LAEDA&quot;,&quot;length&quot;:8,&quot;label&quot;:&quot;Letzte Änderung&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;LAEDA&quot;,&quot;apexType&quot;:&quot;DATEX&quot;},{&quot;name&quot;:&quot;AENAM&quot;,&quot;length&quot;:12,&quot;label&quot;:&quot;Geändert von&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;AENAM&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;LVORM&quot;,&quot;length&quot;:1,&quot;label&quot;:&quot;Löschvormerkung&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;LVORM&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;MEINS&quot;,&quot;length&quot;:3,&quot;label&quot;:&quot;Basis-ME&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;MEINS&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;BSTME&quot;,&quot;length&quot;:3,&quot;label&quot;:&quot;Bestell-ME&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;BSTME&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;PRDHA&quot;,&quot;length&quot;:18,&quot;label&quot;:&quot;Produkthierarchie&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;PRDHA&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;MSTAE&quot;,&quot;length&quot;:2,&quot;label&quot;:&quot;Werksüb. MatSt&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;MSTAE&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;display&quot;:false,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;MARA&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">MARA</value>
+    </values>
+</CustomMetadata>

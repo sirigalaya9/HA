@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcSAPCountrySelector_0</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcSAPCountrySelector</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">0.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;uniformFieldWidth&quot;:true,&quot;structureType&quot;:&quot;STRUCTURE&quot;,&quot;structureName&quot;:&quot;T005T&quot;,&quot;sectionType&quot;:&quot;FILTER&quot;,&quot;parameterName&quot;:&quot;T005T&quot;,&quot;label&quot;:&quot;Query Parameters&quot;,&quot;isEditable&quot;:true,&quot;filterVariant&quot;:&quot;QUERY&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;MANDT&quot;,&quot;length&quot;:3,&quot;label&quot;:&quot;Client&quot;,&quot;isEditable&quot;:false,&quot;display&quot;:true,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;apiName&quot;:&quot;MANDT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;SPRAS&quot;,&quot;length&quot;:1,&quot;label&quot;:&quot;Language&quot;,&quot;isEditable&quot;:false,&quot;display&quot;:true,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;apiName&quot;:&quot;SPRAS&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;LAND1&quot;,&quot;length&quot;:3,&quot;label&quot;:&quot;Country&quot;,&quot;isEditable&quot;:false,&quot;display&quot;:true,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;apiName&quot;:&quot;LAND1&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;LANDX&quot;,&quot;length&quot;:15,&quot;label&quot;:&quot;Name&quot;,&quot;isEditable&quot;:false,&quot;display&quot;:true,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;apiName&quot;:&quot;LANDX&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;NATIO&quot;,&quot;length&quot;:15,&quot;label&quot;:&quot;Nationality&quot;,&quot;isEditable&quot;:false,&quot;display&quot;:true,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;apiName&quot;:&quot;NATIO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;LANDX50&quot;,&quot;length&quot;:50,&quot;label&quot;:&quot;Long name&quot;,&quot;isEditable&quot;:false,&quot;display&quot;:true,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;apiName&quot;:&quot;LANDX50&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;NATIO50&quot;,&quot;length&quot;:50,&quot;label&quot;:&quot;Nationality&quot;,&quot;isEditable&quot;:false,&quot;display&quot;:true,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;apiName&quot;:&quot;NATIO50&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;PRQ_SPREGT&quot;,&quot;length&quot;:30,&quot;label&quot;:&quot;Super region&quot;,&quot;isEditable&quot;:false,&quot;display&quot;:true,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;apiName&quot;:&quot;PRQ_SPREGT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;display&quot;:false,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;T005T&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">T005T</value>
+    </values>
+</CustomMetadata>

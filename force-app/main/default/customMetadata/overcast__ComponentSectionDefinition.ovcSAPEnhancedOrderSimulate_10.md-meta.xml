@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcSAPEnhancedOrderSimulate_10</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcSAPEnhancedOrderSimulate</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;useInfiniteScrolling&quot;:true,&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;ORDER_CFGS_BLOB&quot;,&quot;showRowNumberColumn&quot;:true,&quot;sectionType&quot;:&quot;TAB&quot;,&quot;parameterName&quot;:&quot;ORDER_CFGS_BLOB&quot;,&quot;label&quot;:&quot;Internal configuration data (SCE)&quot;,&quot;isEditable&quot;:false,&quot;fields&quot;:[{&quot;name&quot;:&quot;CONFIG_ID&quot;,&quot;length&quot;:6,&quot;label&quot;:&quot;Configuration ID&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;CONFIG_ID&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;CONTEXT&quot;,&quot;length&quot;:250,&quot;label&quot;:&quot;BLOB&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;CONTEXT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;displayVariant&quot;:&quot;TABLE&quot;,&quot;display&quot;:false,&quot;apiName&quot;:&quot;ORDER_CFGS_BLOB&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">ORDER_CFGS_BLOB</value>
+    </values>
+</CustomMetadata>

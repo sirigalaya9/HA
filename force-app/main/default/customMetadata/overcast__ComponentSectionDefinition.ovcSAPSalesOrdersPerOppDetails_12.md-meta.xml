@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcSAPSalesOrdersPerOppDetails_12</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcSAPSalesOrdersPerOppDetails</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">12.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;useInfiniteScrolling&quot;:true,&quot;uniformFieldWidth&quot;:true,&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;SALES_DOCUMENTS&quot;,&quot;sortDirection&quot;:&quot;&quot;,&quot;showRowNumberColumn&quot;:true,&quot;sectionType&quot;:&quot;HIDDEN&quot;,&quot;parameterName&quot;:&quot;SALES_DOCUMENTS&quot;,&quot;label&quot;:&quot;Document Numbers to Be Selected&quot;,&quot;isEditable&quot;:true,&quot;fields&quot;:[{&quot;name&quot;:&quot;VBELN&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;Sales Document&quot;,&quot;keyField&quot;:true,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;VBELN&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;displayVariant&quot;:&quot;TABLE&quot;,&quot;display&quot;:false,&quot;apiName&quot;:&quot;SALES_DOCUMENTS&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">SALES_DOCUMENTS</value>
+    </values>
+</CustomMetadata>

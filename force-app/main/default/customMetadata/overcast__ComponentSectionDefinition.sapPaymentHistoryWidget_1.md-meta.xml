@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>sapPaymentHistoryWidget_1</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">sapPaymentHistoryWidget</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;variantOptions&quot;:{&quot;semanticColor&quot;:&quot;FIELD:SEMANTIC_COLOR&quot;,&quot;valueLabel&quot;:&quot;$Label.overcast.ovcAveragedaysinarrears&quot;,&quot;value&quot;:&quot;FIELD:AVERAGE_ARREARS&quot;},&quot;structureType&quot;:&quot;STRUCTURE&quot;,&quot;structureName&quot;:&quot;ARREARS&quot;,&quot;sectionType&quot;:&quot;PANEL&quot;,&quot;parameterName&quot;:&quot;ARREARS&quot;,&quot;displayVariant&quot;:&quot;INDICATOR&quot;,&quot;display&quot;:true,&quot;apiName&quot;:&quot;ARREARS&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">ARREARS</value>
+    </values>
+</CustomMetadata>

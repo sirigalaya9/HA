@@ -1,0 +1,14 @@
+/*.slds-modal__content {
+    overflow: initial !important;
+    height: 150px !important;
+    z-index: 10;
+} */
+
+
+.slds-modal__content.overflowModal {
+    overflow-x: scroll !important;
+    overflow-y: scroll !important;
+    /*height: unset !important;*/
+    height: 500px;
+    z-index: 1000000;
+}

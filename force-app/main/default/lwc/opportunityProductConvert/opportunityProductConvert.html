@@ -1,0 +1,90 @@
+<template>
+
+    <lightning-quick-action-panel header={label.title}>
+
+        <div class="slds-is-relative slds-quick-action-panel-body-custom">                    
+
+            <div lwc:if={showpicklist}>
+
+                <lightning-layout vertical-align="center">
+                    <lightning-layout-item size="12">
+                        <lightning-combobox 
+                        label={controllerFieldLabel}
+                        name={controllerFieldLabel}
+                        options={controllingPicklist} 
+                        value={selectedControlling}
+                        onchange={fetchDependentValue}
+                        variant="label-inline">
+                        </lightning-combobox>
+                    </lightning-layout-item>
+                </lightning-layout>       
+                
+                <lightning-layout class="slds-m-top_small" vertical-align="center">
+                    <lightning-layout-item size="12">
+                        <lightning-combobox 
+                        label={dependentFieldLabel}
+                        name={dependentFieldLabel}
+                        options={finalDependentVal} 
+                        value={selectedControlling2}
+                        disabled={dependentDisabled}
+                        onchange={handleDependentPicklist}                                    
+                        variant="label-inline">
+                        </lightning-combobox>  
+                    </lightning-layout-item>
+                </lightning-layout>   
+
+
+                <lightning-layout class="slds-m-top_small" vertical-align="center">
+                    <lightning-layout-item size="12">
+                        <div class="slds-form-element_horizontal slds-form-element">
+                            <label class="slds-form-element__label" for="">{label.product}</label>
+                            <div class="slds-form-element__control" lwc:if={item}>
+                                <template lwc:if={item.PCM_Product__c}>
+                                    <c-lookup 
+                                    label="" 
+                                    data-name="Product2Id"
+                                    errors={errors} 
+                                    onsearch={handleSearch}
+                                    onselectionchange={handleSelectionChange}
+                                    placeholder={label.searchProducts} 
+                                    scroll-after-n-items="10"
+                                    onlookupfocus={handleLookupFocus}>
+                                    </c-lookup>
+                                </template>
+                                <template lwc:else>
+                                    <c-lookup 
+                                    label="" 
+                                    data-name="Product2Id"
+                                    errors={errors} 
+                                    onsearch={handleSearch}
+                                    onselectionchange={handleSelectionChange}
+                                    placeholder={label.searchProducts} 
+                                    scroll-after-n-items="10"
+                                    onlookupfocus={handleLookupFocus}
+                                    selection={item.selection}>
+                                    </c-lookup>
+                                </template>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout> 
+            
+
+            </div>
+
+            <template if:true={showSpinner}>
+                <lightning-spinner variant="brand" size="large">
+                </lightning-spinner>
+            </template>
+        </div>
+
+        <div slot="footer">
+            <lightning-button variant="neutral" label={label.cancel} class="slds-button-footer-custom" onclick={close}>
+            </lightning-button>
+            <lightning-button variant="brand" label={label.save} class="slds-m-left_x-small slds-button-footer-custom"
+                onclick={handleSave} disabled={disableSave}></lightning-button>
+        </div>
+
+    </lightning-quick-action-panel>
+
+</template>

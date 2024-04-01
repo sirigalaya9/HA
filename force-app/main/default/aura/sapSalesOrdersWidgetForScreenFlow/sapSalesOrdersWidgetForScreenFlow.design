@@ -1,0 +1,1 @@
+<design:component label="SAP Sales Orders Widget" ><design:attribute name="recordId" label="Record Id" required="true" /><design:supportedFormFactors><design:supportedFormFactor type="Large" /><design:supportedFormFactor type="Small" /></design:supportedFormFactors></design:component>

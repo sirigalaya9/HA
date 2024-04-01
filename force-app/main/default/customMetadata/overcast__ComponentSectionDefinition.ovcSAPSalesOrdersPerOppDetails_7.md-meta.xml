@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcSAPSalesOrdersPerOppDetails_7</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcSAPSalesOrdersPerOppDetails</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">7.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;useInfiniteScrolling&quot;:false,&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;ORDER_CONDITIONS_OUT&quot;,&quot;sectionType&quot;:&quot;TAB&quot;,&quot;parameterName&quot;:&quot;ORDER_CONDITIONS_OUT&quot;,&quot;label&quot;:&quot;Pricing Conditions&quot;,&quot;isEditable&quot;:false,&quot;fields&quot;:[{&quot;name&quot;:&quot;ITM_NUMBER&quot;,&quot;length&quot;:6,&quot;label&quot;:&quot;Item&quot;,&quot;keyField&quot;:true,&quot;format&quot;:&quot;####&quot;,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;ITM_NUMBER&quot;,&quot;apexType&quot;:&quot;INTEGERX&quot;},{&quot;name&quot;:&quot;COND_TYPE&quot;,&quot;length&quot;:4,&quot;label&quot;:&quot;Type&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;COND_TYPE&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;scale&quot;:9,&quot;precision&quot;:33,&quot;name&quot;:&quot;COND_VALUE&quot;,&quot;label&quot;:&quot;Condition Value&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;COND_VALUE&quot;,&quot;apexType&quot;:&quot;DECIMALX&quot;},{&quot;name&quot;:&quot;CURRENCISO&quot;,&quot;length&quot;:3,&quot;label&quot;:&quot;Currency&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;CURRENCISO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;scale&quot;:0,&quot;precision&quot;:5,&quot;name&quot;:&quot;COND_P_UNT&quot;,&quot;label&quot;:&quot;Per&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;COND_P_UNT&quot;,&quot;apexType&quot;:&quot;DECIMALX&quot;},{&quot;name&quot;:&quot;T_UNIT_ISO&quot;,&quot;length&quot;:3,&quot;label&quot;:&quot;Unit&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;T_UNIT_ISO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;unitCode&quot;:&quot;CURRENCISO&quot;,&quot;scale&quot;:9,&quot;precision&quot;:33,&quot;name&quot;:&quot;CONDVALUE&quot;,&quot;label&quot;:&quot;Condition Value&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;CONDVALUE&quot;,&quot;apexType&quot;:&quot;CURRENCYX&quot;}],&quot;displayVariant&quot;:&quot;TABLE&quot;,&quot;display&quot;:false,&quot;apiName&quot;:&quot;ORDER_CONDITIONS_OUT&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">ORDER_CONDITIONS_OUT</value>
+    </values>
+</CustomMetadata>

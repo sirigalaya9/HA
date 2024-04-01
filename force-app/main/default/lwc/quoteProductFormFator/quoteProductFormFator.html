@@ -1,0 +1,12 @@
+<template>
+    <template if:true={isDesktop}>
+        <c-quote-product record-id={recordId}></c-quote-product>
+        <!--<c-quote-product-mobile record-id={recordId}></c-quote-product-mobile>-->
+    </template>
+    <template if:true={isTablet}>
+        <c-quote-product-mobile record-id={recordId}></c-quote-product-mobile>
+    </template>
+    <template if:true={isMobile}>
+        <c-quote-product-mobile record-id={recordId}></c-quote-product-mobile>
+    </template>
+</template>

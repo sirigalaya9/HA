@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>Hinzufügen</label>
+        <name>BTN_OpportunityLineItem_Add</name>
+    </customLabels>
+    <customLabels>
+        <label>Prüfen Sie Preise</label>
+        <name>BTN_OpportunityLineItem_CheckPricing</name>
+    </customLabels>
+    <customLabels>
+        <label>Aktualisierung</label>
+        <name>BTN_OpportunityLineItem_Refresh</name>
+    </customLabels>
+    <customLabels>
+        <label>Speichern</label>
+        <name>BTN_OpportunityLineItem_Save</name>
+    </customLabels>
+    <customLabels>
+        <label>Gesamtmenge</label>
+        <name>LBL_OpportunityLineItem_TotalAmount</name>
+    </customLabels>
+    <customLabels>
+        <label>Hinzufügen</label>
+        <name>BTN_QuoteLineItem_Add</name>
+    </customLabels>
+    <customLabels>
+        <label>Prüfen Sie Preise und Verfügbarkeit</label>
+        <name>BTN_QuoteLineItem_CheckPricingATP</name>
+    </customLabels>
+    <customLabels>
+        <label>Aktualisierung</label>
+        <name>BTN_QuoteLineItem_Refresh</name>
+    </customLabels>
+    <customLabels>
+        <label>Speichern</label>
+        <name>BTN_QuoteLineItem_Save</name>
+    </customLabels>
+    </Translations>

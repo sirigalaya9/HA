@@ -1,0 +1,5 @@
+<aura:component extensible="true" extends="overcast:ocfComponentHost" implements="force:appHostable,flexipage:availableForRecordHome" description="Overcast Component for sapInvoicesWidget" access="global">
+    <aura:set attribute="componentDefName" value="sapInvoicesWidget" />
+    <aura:method name="getSuperComponent" action="{!c.getSuperComponent}" access="global" />
+    <aura:method name="getComponentType" action="{!c.getComponentType}" access="global" />
+</aura:component>

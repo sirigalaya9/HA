@@ -1,0 +1,91 @@
+<template>
+    <lightning-modal-header label={title} style="font-size: large;"></lightning-modal-header>
+    <div class="slds-modal__content slds-p-around_medium overflowModal" id="modal-content-id-2">
+        <div>
+            <lightning-record-edit-form object-api-name="Project_Team__c">
+                <lightning-messages> </lightning-messages>
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table_fixed-layout">
+                    <thead>
+                        <tr class="slds-text-title--caps" style="height:2rem">
+                            <th class="" scope="col" style="width:30%">
+                                <div class="slds-truncate" title="Team Role"><span style="color:red">* </span>Team Role
+                                </div>
+                            </th>
+                            <th class="" scope="col" style="width:40%">
+                                <div class="slds-truncate slds-cell-wrap" title="Team Member"><span style="color:red">*
+                                    </span>Team Member</div>
+                            </th>
+                            <th class="" scope="col" style="width:30%">
+                                <div class="slds-truncate slds-cell-wrap" title="Project Access"><span
+                                        style="color:red">* </span>Project Access
+                                </div>
+                            </th>
+                            <th class="" scope="col" style="width:5%">
+                                <div class="slds-truncate slds-text-align_center" title=""></div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={projectTeams} for:item="item">
+
+                            <tr key={item.Id}>
+                                <td>
+                                    <lightning-input-field field-name="Team_Role__c" name="Team_Role__c"
+                                        variant="label-hidden" data-field="Team_Role__c" value={item.Team_Role__c}
+                                        data-index={item.index} onchange={handleItemChange} required
+                                        message-when-value-missing="Enter Team Role">
+                                    </lightning-input-field>
+                                </td>
+                                <td>
+                                    <lightning-input-field field-name="Team_Member__c" name="Team_Member__c"
+                                        variant="label-hidden" data-field="Team_Member__c" value={item.Team_Member__c}
+                                        data-index={item.index} onchange={handleItemChange} required
+                                        message-when-value-missing="Enter Team Member">
+                                    </lightning-input-field>
+                                </td>
+                                <td>
+                                    <lightning-input-field field-name="Project_Access__c" name="Project_Access__c"
+                                        variant="label-hidden" data-field="Project_Access__c"
+                                        value={item.Project_Access__c} data-index={item.index}
+                                        onchange={handleItemChange} required
+                                        message-when-value-missing="Enter Project Access">
+                                    </lightning-input-field>
+                                </td>
+                                <td style="display:none;">
+                                    <lightning-input-field field-name="Project__c" name="Project__c"
+                                        variant="label-hidden" data-field="Project__c" value={parentRecordId}
+                                        data-index={item.index} onchange={handleItemChange} required>
+                                    </lightning-input-field>
+                                </td>
+                                <td>
+                                    <div class="slds-text-align_center">
+                                        <lightning-icon icon-name="utility:delete" size="small"
+                                            alternative-text="Remove" title="Remove" style="cursor:pointer"
+                                            onclick={removeItem} data-index={item.index}></lightning-icon>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </template>
+                        <tr>
+                            <td colspan="4">
+                                <div class="slds-text-align_left">
+                                    <lightning-button variant="brand" label="Add " icon-name="utility:add"
+                                        icon-position="right" title="Add Row" onclick={addItem}></lightning-button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </lightning-record-edit-form>
+        </div>
+    </div>
+    <lightning-modal-footer>
+        <lightning-button label="Cancel" onclick={handleSave} class="slds-m-right_x-small"></lightning-button>
+        <lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button>
+    </lightning-modal-footer>
+    <template if:true={showSpinner}>
+        <lightning-spinner variant="brand" size="medium">
+        </lightning-spinner>
+    </template>
+</template>

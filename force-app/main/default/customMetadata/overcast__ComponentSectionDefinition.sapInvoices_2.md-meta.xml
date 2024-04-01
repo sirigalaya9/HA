@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>sapInvoices_2</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">sapInvoices</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">2.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;WEBINVOICEDOCUMENTLIST&quot;,&quot;sortDirection&quot;:&quot;DESC&quot;,&quot;showRowNumberColumn&quot;:true,&quot;sectionType&quot;:&quot;PANEL&quot;,&quot;parameterName&quot;:&quot;WEBINVOICEDOCUMENTLIST&quot;,&quot;maxRows&quot;:100,&quot;label&quot;:&quot;&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;BILLINGDOC&quot;,&quot;linkTarget&quot;:{&quot;parameters&quot;:{&quot;BAPI_WEBINVOICE_GETDETAIL&quot;:{&quot;BILLINGDOC&quot;:&quot;FIELD:BILLINGDOC&quot;}},&quot;componentDef&quot;:&quot;sapInvoiceDetails&quot;,&quot;component&quot;:&quot;DetailViewer&quot;},&quot;length&quot;:10,&quot;label&quot;:&quot;$Label.overcast.ovcInvoice&quot;,&quot;keyField&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;BILLINGDOC&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;BILL_TYPE_TEXT&quot;,&quot;length&quot;:20,&quot;label&quot;:&quot;$Label.overcast.ovcBillingType&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;BILL_TYPE_TEXT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;BILL_DATE&quot;,&quot;length&quot;:12,&quot;label&quot;:&quot;$Label.overcast.ovcBillingDate&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;BILL_DATE&quot;,&quot;apexType&quot;:&quot;DATEX&quot;},{&quot;name&quot;:&quot;BILLCATEG_TEXT&quot;,&quot;length&quot;:30,&quot;label&quot;:&quot;$Label.overcast.ovcBillingCategory&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;BILLCATEG_TEXT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;unitCode&quot;:&quot;CURRENCY_ISO&quot;,&quot;scale&quot;:2,&quot;precision&quot;:16,&quot;name&quot;:&quot;NET_VALUE&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcNetValue&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;NET_VALUE&quot;,&quot;apexType&quot;:&quot;CURRENCYX&quot;},{&quot;unitCode&quot;:&quot;CURRENCY_ISO&quot;,&quot;scale&quot;:2,&quot;precision&quot;:14,&quot;name&quot;:&quot;TAX_AMOUNT&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcTaxAmount&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;TAX_AMOUNT&quot;,&quot;apexType&quot;:&quot;CURRENCYX&quot;}],&quot;displayVariant&quot;:&quot;TABLE&quot;,&quot;display&quot;:true,&quot;apiName&quot;:&quot;WEBINVOICEDOCUMENTLIST&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">WEBINVOICEDOCUMENTLIST</value>
+    </values>
+</CustomMetadata>

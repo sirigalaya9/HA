@@ -1,0 +1,238 @@
+<template>
+    <template lwc:if={lineItemAddEdit}>
+        <!-- Just view the record once Opp is synced with Quote, using recordViewForm, as it is much more easier, compared to setting disabled/readonly on recordEditForm -->
+        <div lwc:if={isOppLocked}>
+            <lightning-record-view-form
+            record-id={selectedItem.Id}
+            object-api-name="OpportunityLineItem">
+            <div class="slds-box">
+                <lightning-output-field field-name="Product2.Product_Code_Format__c"> </lightning-output-field>
+                <lightning-output-field field-name="OHA__c"></lightning-output-field>
+                <lightning-output-field field-name="Quantity"></lightning-output-field>
+                <lightning-output-field field-name="UnitPrice"></lightning-output-field>
+                <lightning-output-field field-name="TotalPrice"></lightning-output-field>
+                <lightning-output-field field-name="Description"></lightning-output-field>
+            </div>
+        </lightning-record-view-form>
+        <lightning-button variant="brand" icon-name="utility:back" label="Back" title="Back to list of products."
+        class="slds-align_absolute-center slds-var-p-top_medium" onclick={handleBack}>
+        </lightning-button>
+        </div>
+        <div class="slds-p-around_small" lwc:else>
+            <lightning-record-edit-form object-api-name="OpportunityLineItem" record-id={selectedItem.id}>
+                <lightning-messages></lightning-messages>
+
+                <!-- If adding product -->
+                <template lwc:if={selectedItem.isAdd}>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_4-of-5">
+                            <c-lookup label="" data-name="Product2Id" data-index={selectedItem.index}
+                                errors={selectedItem.errors} onsearch={handleSearch}
+                                onselectionchange={handleSelectionChange} placeholder="Search Products..."
+                                scroll-after-n-items="10" required>
+                            </c-lookup>
+                        </div>
+                        <div class="slds-col slds-size_1-of-5 slds-var-p-left_medium">
+                            <lightning-icon icon-name="standard:hierarchy" alternative-text="Settings" title="Settings"
+                                class="customHierarchyIcon slds-var-m-top_x-small" onclick={handlePCMClick}></lightning-icon>
+                        </div>
+                    </div>
+                </template>
+                <template lwc:else>
+                    <div class="slds-grid">
+                        <div class="slds-text-heading_small slds-p-around_small slds-col slds-size_4-of-5">{selectedItem.Product2.Product_Code_Format__c}</div>
+                        <div class="slds-col slds-size_1-of-5">
+                            <lightning-icon icon-name="standard:hierarchy" alternative-text="Settings" title="Settings"
+                                class="customHierarchyIcon slds-var-m-top_x-small" onclick={handlePCMClick}></lightning-icon>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Need to disable this based on the PCM product. Need to add item.isPCM property to check -->
+                <lightning-input-field value={selectedItem.OHA__c} field-name="OHA__c" onchange={handleItemChange}
+                    data-field="OHA__c" disabled={selectedItem.OHA_editablity}></lightning-input-field>
+
+                <lightning-input-field value={selectedItem.Quantity} field-name="Quantity" onchange={handleItemChange}
+                    data-field="Quantity"></lightning-input-field>
+                <lightning-input-field value={selectedItem.UnitPrice} field-name="UnitPrice" onchange={handleItemChange}
+                    data-field="UnitPrice" disabled={selectedItem.OHA_editablity}></lightning-input-field>
+                <lightning-input-field value={selectedItem.TotalPrice} field-name="TotalPrice" data-field="TotalPrice"
+                    readonly></lightning-input-field>
+                <!-- readonly over disabled, because readonly is more eye friendly -->
+                <lightning-input-field value={selectedItem.Description} field-name="Description"
+                    onchange={handleItemChange} data-field="Description" readonly></lightning-input-field>
+                <!-- readonly over disabled, because readonly is more eye friendly -->
+            </lightning-record-edit-form>
+                <lightning-button variant="brand" icon-name="utility:save" label="Save" title="Save Product(s)"
+                    class="slds-p-right_small" onclick={handleSaveItems} data-add={selectedItem.isAdd}>
+                </lightning-button>
+                <lightning-button label="Cancel" onclick={handleCancelEditItems}>
+                </lightning-button>
+        </div>
+    </template>
+
+    <template lwc:else>
+        <!--Header-->
+        <div class="slds-p-around_small" style="background-color: white; position: sticky; top:0px; z-index: 10;">
+            <lightning-layout multiple-row>
+                <lightning-layout-item size="12" class="slds-align_absolute-center">
+                    <lightning-badge class="total-badge" label='Total Amount' icon-name="utility:moneybag">
+                    </lightning-badge>
+                    <lightning-formatted-number value={totalAmount} format-style="currency"
+                        currency-code={currencyIsoCode} currency-display-as="code" class="slds-p-left_small">
+                    </lightning-formatted-number>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <!--Header-->
+
+        <!---Detail-->
+        <div style="overflow-y: auto;">
+            <template for:each={items} for:item="item">
+                <div class="" key={item.id} data-index={item.index}>
+                    <div class="" style="background-color: white; border-bottom: 0.8px solid lightgray;">
+                        <lightning-layout class="center" style="background-color: white;">
+                            <lightning-layout-item size="1" class="slds-align_absolute-center"
+                                style="background-color: white;">
+                                <div>
+                                    {item.index}
+                                </div>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item class="" size="9">
+                                <lightning-tile label={item.Product2.Product_Code_Format__c} data-record-id={item.Id}
+                                    class="slds-p-around_small" href={item.url}>
+                                    <div class="tile-content" onclick={handleTileClick} data-index={item.index}>
+                                        <lightning-layout multiple-rows>
+
+                                            <lightning-layout-item class="" size="6" small-device-size="6"
+                                                medium-device-size="6"
+                                                large-device-size="6">OHA:</lightning-layout-item>
+                                            <lightning-layout-item class="" size="6" small-device-size="6"
+                                                medium-device-size="6"
+                                                large-device-size="6">{item.OHA__c}</lightning-layout-item>
+
+                                            <lightning-layout-item class="" size="6" small-device-size="6"
+                                                medium-device-size="6" large-device-size="6">Quantity:
+                                            </lightning-layout-item>
+                                            <lightning-layout-item class="" size="6" small-device-size="6"
+                                                medium-device-size="6" large-device-size="6">
+                                                {item.Quantity}
+                                            </lightning-layout-item>
+
+                                            <lightning-layout-item class="" size="6" small-device-size="6"
+                                                medium-device-size="6" large-device-size="6">Sales
+                                                Price:</lightning-layout-item>
+                                            <template lwc:if={item.is_SAP_Price__c}>
+                                                <lightning-layout-item class="" size="4" small-device-size="4"
+                                                    medium-device-size="4" large-device-size="4">
+                                                    <lightning-formatted-number value={item.UnitPrice}
+                                                        format-style="currency" currency-display-as="code"
+                                                        currency-code={currencyIsoCode}>
+                                                    </lightning-formatted-number>
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="2" small-device-size="2"
+                                                    medium-device-size="2" large-device-size="2">
+                                                    <lightning-icon class="checkprice-iconcolor slds-p-left_x-small" icon-name="utility:success" size="x-small"
+                                                        alternative-text="Price checked" title="Price checked"
+                                                        style="cursor:pointer">
+                                                    </lightning-icon>
+                                                </lightning-layout-item>
+                                            </template>
+                                            <template lwc:else>
+                                                <lightning-layout-item class="" size="6" small-device-size="6"
+                                                    medium-device-size="6" large-device-size="6">
+                                                    <lightning-formatted-number value={item.UnitPrice}
+                                                        format-style="currency" currency-display-as="code"
+                                                        currency-code={currencyIsoCode}>
+                                                    </lightning-formatted-number>
+                                                </lightning-layout-item>
+                                            </template>
+
+                                            <lightning-layout-item class="" size="6" small-device-size="6"
+                                                medium-device-size="6" large-device-size="6">Total
+                                                Price:</lightning-layout-item>
+                                            <lightning-layout-item class="" size="6" small-device-size="6"
+                                                medium-device-size="6" large-device-size="6">
+                                                <lightning-formatted-number value={item.TotalPrice}
+                                                    format-style="currency" currency-display-as="code"
+                                                    currency-code={currencyIsoCode}></lightning-formatted-number>
+                                            </lightning-layout-item>
+
+                                            <lightning-layout-item class="" size="6" small-device-size="6"
+                                                medium-device-size="6" large-device-size="6">Description:
+                                            </lightning-layout-item>
+
+                                            <lightning-layout-item class="" size="6" small-device-size="6"
+                                                medium-device-size="6"
+                                                large-device-size="6">{item.Description}</lightning-layout-item>
+                                        </lightning-layout>
+
+                                    </div>
+                                </lightning-tile>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item size="2" class="slds-align_absolute-center"
+                                style="background-color: white;">
+                                <template lwc:if={isOppLocked}></template>
+                                <template lwc:else>
+                                    <lightning-icon icon-name="utility:delete" variant="container" alternative-text="Remove" class="slds-m-left_xx-small removeiconcolor" title="Remove" onclick={handleDeleteClick} data-index={item.index} size="medium"></lightning-icon>
+                                </template>
+                            </lightning-layout-item>
+
+                        </lightning-layout>
+                    </div>
+                </div>
+            </template>
+                <div class="slds-box" lwc:ref="swipe">
+                    <span style="color: purple;">
+                        Test Zone: Please Swipe me!
+                    </span>
+                    <lightning-icon icon-name="utility:delete" size="small" class="delete-icon" lwc:ref="delete" variant="destructive" lwc:if={isDeleteIconVisible}></lightning-icon>
+                </div>
+        </div>
+        <!---Detail-->
+
+        <div class="footer">
+            <template lwc:if={isOppLocked}>
+                <i style="color: red;">Items are locked from editing, as there is a Quote that is in sync with this opportunity.</i>
+            </template>
+            <template lwc:else>
+                <lightning-layout multiple-rows>
+                    <lightning-layout-item class="slds-text-result slds-p-left_small" size="4">
+                        <lightning-icon class="" icon-name="action:new" size="small" alternative-text="Add" title="New" style="cursor:pointer" onclick={addItem}></lightning-icon>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-right_small slds-text-align_right" size="8">
+                        <lightning-button variant="brand" label="Check Pricing" title="Send items for price check in SAP."
+                            icon-name="utility:moneybag" class="slds-m-left_x-small" onclick={handleCheckPricing} disabled={isOppLocked}></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template>
+        </div>
+        <!--</lightning-card>-->
+
+    </template>
+    <template if:true={showSpinner}>
+        <lightning-spinner variant="brand" size="medium">
+        </lightning-spinner>
+    </template>
+
+    <template lwc:if={showPCM}>
+        <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <lightning-button-icon variant="bare-inverse" icon-name="utility:close" onclick={handleXClose}
+                    alternative-text="Close" class="slds-modal__close" size="large">
+                </lightning-button-icon>
+                <div class="slds-modal__content slds-modal__content_headless"
+                    style="overflow-x: visible;overflow-y: visible;">
+                    <c-opportunity-product-convert item={selectedItem} record-id={recordId}
+                        currency-iso-code={currencyIsoCode} pricebook-id={pricebookId} sales-org-code={salesOrgCode}
+                        oncloseform={handleCloseForm} language-code={languageCode}>
+                    </c-opportunity-product-convert>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+
+</template>

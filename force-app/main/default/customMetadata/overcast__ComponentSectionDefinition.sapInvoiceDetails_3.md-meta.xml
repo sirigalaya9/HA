@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>sapInvoiceDetails_3</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">sapInvoiceDetails</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">3.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;useInfiniteScrolling&quot;:true,&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;WEBINVOICEPARTNERS&quot;,&quot;sectionType&quot;:&quot;TAB&quot;,&quot;parameterName&quot;:&quot;WEBINVOICEPARTNERS&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcPartners&quot;,&quot;isEditable&quot;:false,&quot;fields&quot;:[{&quot;name&quot;:&quot;PARTN_ROLE_TEXT&quot;,&quot;length&quot;:15,&quot;label&quot;:&quot;$Label.overcast.ovcPartnerRole&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;PARTN_ROLE_TEXT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;CUSTOMER&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;$Label.overcast.ovcCustomer&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;CUSTOMER&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;NAME_LIST&quot;,&quot;length&quot;:35,&quot;label&quot;:&quot;$Label.overcast.ovcPartnerName&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;NAME_LIST&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;STREET&quot;,&quot;length&quot;:35,&quot;label&quot;:&quot;$Label.overcast.ovcStreet&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;STREET&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;CITY&quot;,&quot;length&quot;:35,&quot;label&quot;:&quot;$Label.overcast.ovcCity&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;CITY&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;REGION_TEXT&quot;,&quot;length&quot;:20,&quot;label&quot;:&quot;$Label.overcast.ovcRegion&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;REGION_TEXT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;COUNTRY_ISO&quot;,&quot;length&quot;:2,&quot;label&quot;:&quot;$Label.overcast.ovcCountry&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;COUNTRY_ISO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;POSTL_CODE&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;$Label.overcast.ovcPostalCode&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;POSTL_CODE&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;TELEPHONE&quot;,&quot;length&quot;:16,&quot;label&quot;:&quot;$Label.overcast.ovcTelephone&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;TELEPHONE&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;TRANSPZONE&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;TRANSPZONE&quot;,&quot;display&quot;:false,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;TRANSPZONE&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;TRANSPZONE_TEXT&quot;,&quot;length&quot;:20,&quot;label&quot;:&quot;TRANSPZONE_TEXT&quot;,&quot;display&quot;:false,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;TRANSPZONE_TEXT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;displayVariant&quot;:&quot;TABLE&quot;,&quot;display&quot;:true,&quot;apiName&quot;:&quot;WEBINVOICEPARTNERS&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">WEBINVOICEPARTNERS</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>sapSalesOrders_3</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">sapSalesOrders</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">3.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;SALES_ORDERS&quot;,&quot;sortDirection&quot;:&quot;&quot;,&quot;showRowNumberColumn&quot;:true,&quot;sectionType&quot;:&quot;PANEL&quot;,&quot;parameterName&quot;:&quot;SALES_ORDERS&quot;,&quot;maxRows&quot;:100,&quot;label&quot;:&quot;&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;SD_DOC&quot;,&quot;linkTarget&quot;:{&quot;parameters&quot;:{&quot;SALES_DOCUMENTS&quot;:{&quot;VBELN&quot;:&quot;FIELD:SD_DOC&quot;}},&quot;componentDef&quot;:&quot;sapSalesOrderDetails&quot;,&quot;component&quot;:&quot;DetailViewer&quot;},&quot;length&quot;:10,&quot;label&quot;:&quot;$Label.overcast.ovcOrderNumber&quot;,&quot;keyField&quot;:true,&quot;format&quot;:&quot;####&quot;,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;SD_DOC&quot;,&quot;apexType&quot;:&quot;INTEGERX&quot;},{&quot;name&quot;:&quot;DOC_TYPE&quot;,&quot;length&quot;:15,&quot;label&quot;:&quot;$Label.overcast.ovcDocumentType&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;descriptionSource&quot;:&quot;SalesDocumentType__c&quot;,&quot;apiName&quot;:&quot;DOC_TYPE&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;DOC_DATE&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;$Label.overcast.ovcDocumentDate&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;DOC_DATE&quot;,&quot;apexType&quot;:&quot;DATEX&quot;},{&quot;name&quot;:&quot;STATUS_DOC&quot;,&quot;length&quot;:1,&quot;label&quot;:&quot;$Label.overcast.ovcStatus&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;descriptionSource&quot;:&quot;DocumentStatus__c&quot;,&quot;apiName&quot;:&quot;STATUS_DOC&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;REQ_DATE&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;$Label.overcast.ovcRequestedDeliveryDate&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;REQ_DATE&quot;,&quot;apexType&quot;:&quot;DATEX&quot;},{&quot;name&quot;:&quot;PURCH_NO&quot;,&quot;length&quot;:20,&quot;label&quot;:&quot;$Label.overcast.ovcPONumber&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;PURCH_NO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;unitCode&quot;:&quot;CURR_ISO&quot;,&quot;scale&quot;:2,&quot;precision&quot;:16,&quot;name&quot;:&quot;NET_VAL_HD&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcAmount&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;NET_VAL_HD&quot;,&quot;apexType&quot;:&quot;CURRENCYX&quot;}],&quot;displayVariant&quot;:&quot;TABLE&quot;,&quot;display&quot;:true,&quot;apiName&quot;:&quot;SALES_ORDERS&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">SALES_ORDERS</value>
+    </values>
+</CustomMetadata>

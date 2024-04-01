@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>sapSalesOrders_1</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">sapSalesOrders</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;structureType&quot;:&quot;STRUCTURE&quot;,&quot;structureName&quot;:&quot;BAPI_SALESORDER_GETLIST&quot;,&quot;sectionType&quot;:&quot;FILTER&quot;,&quot;parameterName&quot;:&quot;BAPI_SALESORDER_GETLIST&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcOtherSelections&quot;,&quot;isEditable&quot;:true,&quot;fields&quot;:[{&quot;name&quot;:&quot;PURCHASE_ORDER_NUMBER&quot;,&quot;length&quot;:35,&quot;label&quot;:&quot;$Label.overcast.ovcPONumber&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;PURCHASE_ORDER_NUMBER&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;MATERIAL&quot;,&quot;length&quot;:18,&quot;label&quot;:&quot;$Label.overcast.ovcMaterial&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:true,&quot;direction&quot;:&quot;INPUT&quot;,&quot;apiName&quot;:&quot;MATERIAL&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;display&quot;:true,&quot;apiName&quot;:&quot;BAPI_SALESORDER_GETLIST&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">BAPI_SALESORDER_GETLIST</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,107 @@
+.lgc-bg {
+    background-color: rgb(242 242 242);
+}
+
+.lgc-bg-inverse {
+    background-color: rgb(22 50 92);
+}
+
+.iconcolor {
+    --slds-c-icon-color-background: #FF5D2D;
+}
+
+.total-badge {
+    --slds-c-badge-color-background: #0176d340;
+}
+
+.iconcolor {
+    --slds-c-icon-color-background: #FF5D2D;
+}
+
+.removeiconcolor {
+    --slds-c-icon-color-foreground-default: firebrick;
+}
+
+.line-items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checkprice-iconcolor{
+    --slds-c-icon-color-foreground-default: #05A59A;
+}
+
+.footer {
+    background-color: #f0f0f0;
+    padding: 0.5rem;
+    position: sticky;
+    bottom: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.swipe-container {
+    display: flex;
+    overflow: auto;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+/* scrollbar should be hidden */
+.swipe-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* main element should always snap into view */
+.swipe-element {
+    scroll-snap-align: start;
+    font-family: sans-serif;
+    /*padding: 16px;
+    background-color: whitesmoke;*/
+}
+
+/* actions and element should be 100% wide */
+.action,
+.swipe-element {
+    min-width: 100%;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+}
+
+/* icon should remain sticky */
+i {
+    color: white;
+    position: sticky;
+    left: 16px;
+    right: 50px;
+}
+
+
+.right {
+    justify-content: flex-end;
+    /*background-color: cornflowerblue;*/
+}
+
+ul>li {
+    display: inline-block;
+    /* You can also add some margins here to make it look prettier */
+}
+
+.customHierarchyIcon{
+    --slds-c-icon-color-foreground: orange;
+    --slds-c-icon-color-background: white;
+}
+.customButton{
+    background-color: white;
+}

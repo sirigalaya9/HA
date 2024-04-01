@@ -1,0 +1,99 @@
+<template>
+    <lightning-modal-header label="Product Selection" ></lightning-modal-header>
+    <lightning-modal-body>  
+        <lightning-tabset active-tab-value={activeTabValue}>
+            <lightning-tab label="Add Products" title="Add Products" onactive={handleAddTab} value="add"> 
+                <div class="slds-grid slds-gutters" style="padding: 0px 0px 0px 11px;">
+                    <template lwc:if={showFilter}>
+                        <div class="slds-col slds-size_3-of-12" style="border:1px solid #E5E5E5;">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-12">
+                                    <div style="height: 42px; padding:16px 0px 0px 10px; font-weight: bold; font-size: 1rem;">
+                                        Filter
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-1 slds-large-size_11-of-12" style="text-align:right; padding: 10px 10px 15px 5px;">
+                                    <lightning-button if:true={showResetFilters} label="Reset" variant="destructive-text" title="Reset Filters" icon-name="utility:undo" icon-position="right" class="slds-m-left_x-small" onclick={handleResetFilters}></lightning-button>
+                                    <lightning-button label="Search" title="Search" icon-name="utility:search" icon-position="right" class="slds-m-left_x-small" onclick={handleSearch}></lightning-button>
+                                </div>
+                            </div>
+                            <div style="height:500px; overflow: auto;">
+                                <div class="slds-p-around_small lgc-bg">
+                                    <lightning-input lwc:ref="filterOneInput" type="text" label="Product Code" placeholder="search here..." onchange={handleCodeInputChange} value={codeInput}></lightning-input>
+                                </div>
+
+                                <!--category-->
+                                <!--<div class="slds-p-around_small lgc-bg">
+                                    <lightning-combobox
+                                        name="Category"
+                                        label="Category"
+                                        value={productFilterData.selectedFilterValues.category__c}
+                                        placeholder="-"
+                                        data-filter-name="category__c"
+                                        options={productFilterData.filterOptions.category__c}
+                                        onchange={handleFilterOnChange} ></lightning-combobox>
+                                </div>-->
+
+                                <div class="slds-p-around_small lgc-bg">
+                                <lightning-record-edit-form object-api-name="Product2">
+                                    <lightning-input-field field-name="Product_Hierarchy_1__c" onchange={handleFilterOnChange}
+                                    value={ph1val}>
+                                    </lightning-input-field>
+
+                                    <lightning-input-field field-name="Product_Hierarchy_2__c" onchange={handleFilterOnChange}
+                                    value={ph2val}>
+                                    </lightning-input-field>
+
+                                    <lightning-input-field field-name="Product_Hierarchy_3__c" onchange={handleFilterOnChange}
+                                    value={ph3val}>
+                                    </lightning-input-field>
+                                </lightning-record-edit-form>
+                            </div>
+
+                            </div>           
+                        </div>
+                    </template>
+                    <template lwc:else>
+                    </template>  
+                    <div class={filerTabClass}>
+                        <div style="overflow: auto; max-height: 540px;">
+                            <template lwc:if={showSearchSpinner}>
+                                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                            </template>
+                            <template lwc:else>
+                                <span 
+                                    style={showSelectedStyle} 
+                                    onclick={handleShowSelectedClick}
+                                >
+                                    {showSelectedLabel}
+                                </span>
+                                
+                                <lightning-datatable
+                                    data={datatableData}
+                                    columns={columns}
+                                    key-field="Product2Id"
+                                    onrowselection={handleRowSelection}
+                                    selected-rows = {selectedRowIds}
+                                >
+                                </lightning-datatable>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </lightning-tab>
+        </lightning-tabset>      
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <template lwc:if={showAddFooter}>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col" style="text-align: left;">
+                    <lightning-button label="Close" class="slds-m-right_x-small" onclick={handleClose}></lightning-button>
+                    &nbsp;
+                </div>
+                <div class="slds-col" style="text-align: right;">
+                    <lightning-button variant="brand" icon-name="utility:add" label="Add Products" class="slds-m-right_x-small" onclick={handleAddProducts}></lightning-button>
+                </div>
+            </div>
+        </template>
+    </lightning-modal-footer>
+</template>

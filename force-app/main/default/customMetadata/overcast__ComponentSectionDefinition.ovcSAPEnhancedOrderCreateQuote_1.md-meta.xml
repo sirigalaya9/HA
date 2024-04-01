@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcSAPEnhancedOrderCreateQuote_1</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcSAPEnhancedOrderCreateQuote</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;structureType&quot;:&quot;STRUCTURE&quot;,&quot;structureName&quot;:&quot;ocf_Internal&quot;,&quot;parameterName&quot;:&quot;ocf_Internal&quot;,&quot;isEditable&quot;:true,&quot;fields&quot;:[{&quot;name&quot;:&quot;ocf_OrderTotal&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;apiName&quot;:&quot;ocf_OrderTotal&quot;,&quot;apexType&quot;:&quot;DECIMALX&quot;},{&quot;name&quot;:&quot;ocf_SoldToCurrency&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;apiName&quot;:&quot;ocf_SoldToCurrency&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;ocf_DiscountCondition&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;apiName&quot;:&quot;ocf_DiscountCondition&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;ocf_PricebookId&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;apiName&quot;:&quot;ocf_PricebookId&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;display&quot;:false,&quot;apiName&quot;:&quot;ocf_Internal&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">ocf_Internal</value>
+    </values>
+</CustomMetadata>

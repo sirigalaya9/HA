@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcHafeleQuoteCreate_10</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcHafeleQuoteCreate</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;variantOptions&quot;:{&quot;keyField&quot;:&quot;ITM_NUMBER,COND_TYPE,COND_COUNT&quot;,&quot;valueField&quot;:&quot;COND_VALUE&quot;},&quot;useInfiniteScrolling&quot;:true,&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;ORDER_CONDITIONS_IN&quot;,&quot;sortDirection&quot;:&quot;&quot;,&quot;showRowNumberColumn&quot;:true,&quot;sectionType&quot;:&quot;ACCORDION&quot;,&quot;parameterName&quot;:&quot;ORDER_CONDITIONS_IN&quot;,&quot;label&quot;:&quot;Conditions&quot;,&quot;isEditable&quot;:true,&quot;fields&quot;:[{&quot;tableTransposeOptions&quot;:{&quot;staticValues&quot;:{&quot;CURRENCY_x&quot;:&quot;EUR&quot;},&quot;keyValues&quot;:[&quot;000000&quot;,&quot;HD00&quot;,&quot;01&quot;]},&quot;scale&quot;:2,&quot;precision&quot;:15,&quot;name&quot;:&quot;HD00&quot;,&quot;label&quot;:&quot;Hafele Discount&quot;,&quot;isEditable&quot;:true,&quot;inputOptions&quot;:{&quot;componentAttributes&quot;:{}},&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;descriptionSource&quot;:&quot;&quot;,&quot;apiName&quot;:&quot;HD00&quot;,&quot;apexType&quot;:&quot;DECIMALX&quot;}],&quot;displayVariant&quot;:&quot;TABLETRANSPOSE&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;defaultActive&quot;:true,&quot;apiName&quot;:&quot;ORDER_CONDITIONS_IN&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">ORDER_CONDITIONS_IN</value>
+    </values>
+</CustomMetadata>

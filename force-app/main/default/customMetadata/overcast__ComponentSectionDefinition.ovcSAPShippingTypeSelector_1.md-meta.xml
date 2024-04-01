@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcSAPShippingTypeSelector_1</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcSAPShippingTypeSelector</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;useInfiniteScrolling&quot;:true,&quot;uniformFieldWidth&quot;:true,&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;T173T&quot;,&quot;sortDirection&quot;:&quot;&quot;,&quot;showRowNumberColumn&quot;:true,&quot;sectionType&quot;:&quot;PANEL&quot;,&quot;parameterName&quot;:&quot;T173T&quot;,&quot;label&quot;:&quot;&quot;,&quot;isEditable&quot;:false,&quot;fields&quot;:[{&quot;name&quot;:&quot;MANDT&quot;,&quot;length&quot;:3,&quot;label&quot;:&quot;Client&quot;,&quot;keyField&quot;:false,&quot;isEditable&quot;:false,&quot;inputOptions&quot;:{&quot;componentAttributes&quot;:{&quot;disabled&quot;:&quot;false&quot;,&quot;required&quot;:&quot;false&quot;}},&quot;display&quot;:false,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;descriptionSource&quot;:&quot;&quot;,&quot;apiName&quot;:&quot;MANDT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;SPRAS&quot;,&quot;length&quot;:1,&quot;label&quot;:&quot;Language&quot;,&quot;isEditable&quot;:false,&quot;display&quot;:false,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;apiName&quot;:&quot;SPRAS&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;VSART&quot;,&quot;length&quot;:2,&quot;label&quot;:&quot;Ship Type&quot;,&quot;isEditable&quot;:false,&quot;inputOptions&quot;:{&quot;componentAttributes&quot;:{&quot;disabled&quot;:&quot;false&quot;,&quot;required&quot;:&quot;false&quot;}},&quot;display&quot;:true,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;descriptionSource&quot;:&quot;&quot;,&quot;apiName&quot;:&quot;VSART&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;BEZEI&quot;,&quot;length&quot;:20,&quot;label&quot;:&quot;Description&quot;,&quot;isEditable&quot;:false,&quot;inputOptions&quot;:{&quot;componentAttributes&quot;:{&quot;disabled&quot;:&quot;false&quot;,&quot;required&quot;:&quot;false&quot;}},&quot;display&quot;:true,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;descriptionSource&quot;:&quot;&quot;,&quot;apiName&quot;:&quot;BEZEI&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;ovcShipTypeWithID&quot;,&quot;length&quot;:80,&quot;label&quot;:&quot;Ship Type With ID&quot;,&quot;isEditable&quot;:true,&quot;display&quot;:false,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;apiName&quot;:&quot;ovcShipTypeWithID&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;displayVariant&quot;:&quot;SELECTABLETABLE&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;OUTPUT&quot;,&quot;apiName&quot;:&quot;T173T&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">T173T</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ovcSAPSalesOrdersPerOppDetails_4</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">ovcSAPSalesOrdersPerOppDetails</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">4.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;useInfiniteScrolling&quot;:true,&quot;structureType&quot;:&quot;TABLE&quot;,&quot;structureName&quot;:&quot;ORDER_ITEMS_OUT&quot;,&quot;sectionType&quot;:&quot;TAB&quot;,&quot;parameterName&quot;:&quot;ORDER_ITEMS_OUT&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcItems&quot;,&quot;isEditable&quot;:false,&quot;fields&quot;:[{&quot;name&quot;:&quot;ITM_NUMBER&quot;,&quot;length&quot;:6,&quot;label&quot;:&quot;$Label.overcast.ovcItem&quot;,&quot;keyField&quot;:true,&quot;format&quot;:&quot;####&quot;,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;ITM_NUMBER&quot;,&quot;apexType&quot;:&quot;INTEGERX&quot;},{&quot;name&quot;:&quot;MATERIAL&quot;,&quot;length&quot;:18,&quot;label&quot;:&quot;$Label.overcast.ovcMaterialNumber&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;MATERIAL&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;SHORT_TEXT&quot;,&quot;length&quot;:40,&quot;label&quot;:&quot;$Label.overcast.ovcDescription&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;SHORT_TEXT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;unitCode&quot;:&quot;CURREN_ISO&quot;,&quot;scale&quot;:9,&quot;precision&quot;:33,&quot;name&quot;:&quot;NET_PRICE&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcNetPrice&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;NET_PRICE&quot;,&quot;apexType&quot;:&quot;CURRENCYX&quot;},{&quot;unitCode&quot;:&quot;ISOCODUNIT&quot;,&quot;scale&quot;:3,&quot;precision&quot;:16,&quot;name&quot;:&quot;REQ_QTY&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcRequiredQuantity&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;REQ_QTY&quot;,&quot;apexType&quot;:&quot;DECIMALX&quot;},{&quot;name&quot;:&quot;ISOCODUNIT&quot;,&quot;length&quot;:3,&quot;label&quot;:&quot;$Label.overcast.ovcUnit&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;descriptionSource&quot;:&quot;SAP_UOM__c&quot;,&quot;apiName&quot;:&quot;ISOCODUNIT&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;unitCode&quot;:&quot;CURREN_ISO&quot;,&quot;scale&quot;:9,&quot;precision&quot;:33,&quot;name&quot;:&quot;NET_VALUE&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcNetValue&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;NET_VALUE&quot;,&quot;apexType&quot;:&quot;CURRENCYX&quot;},{&quot;unitCode&quot;:&quot;CURREN_ISO&quot;,&quot;scale&quot;:9,&quot;precision&quot;:33,&quot;name&quot;:&quot;TAX_AMOUNT&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcTaxAmount&quot;,&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;TAX_AMOUNT&quot;,&quot;apexType&quot;:&quot;CURRENCYX&quot;}],&quot;displayVariant&quot;:&quot;TABLE&quot;,&quot;display&quot;:true,&quot;apiName&quot;:&quot;ORDER_ITEMS_OUT&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">ORDER_ITEMS_OUT</value>
+    </values>
+</CustomMetadata>

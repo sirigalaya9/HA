@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>sapOrderEdit_4</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__ComponentDefinition__c</field>
+        <value xsi:type="xsd:string">sapOrderEdit</value>
+    </values>
+    <values>
+        <field>overcast__Order__c</field>
+        <value xsi:type="xsd:double">4.0</value>
+    </values>
+    <values>
+        <field>overcast__SectionDefinition__c</field>
+        <value xsi:type="xsd:string">{&quot;structureType&quot;:&quot;STRUCTURE&quot;,&quot;structureName&quot;:&quot;ocf_PARTNERS&quot;,&quot;sectionType&quot;:&quot;ACCORDION&quot;,&quot;parameterName&quot;:&quot;ocf_PARTNERS&quot;,&quot;label&quot;:&quot;Partners&quot;,&quot;isEditable&quot;:true,&quot;fields&quot;:[{&quot;name&quot;:&quot;ocf_SOLDTO&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;Sold To&quot;,&quot;isEditable&quot;:false,&quot;inputVariant&quot;:&quot;LOOKUP&quot;,&quot;inputOptions&quot;:{&quot;generalOptions&quot;:{&quot;sapPartnerFunction&quot;:&quot;AG&quot;},&quot;componentAttributes&quot;:{&quot;required&quot;:&quot;true&quot;,&quot;placeholder&quot;:null,&quot;relatedKeyField&quot;:null,&quot;relatedRecord&quot;:null,&quot;valueField&quot;:null,&quot;keyField&quot;:&quot;AccountNumber&quot;,&quot;subTitleField&quot;:&quot;BillingAddress&quot;,&quot;objectAPIName&quot;:&quot;Account&quot;}},&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;ocf_SOLDTO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;ocf_SHIPTO&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;Ship To&quot;,&quot;isEditable&quot;:true,&quot;inputVariant&quot;:&quot;LOOKUP&quot;,&quot;inputOptions&quot;:{&quot;generalOptions&quot;:{&quot;sapPartnerFunction&quot;:&quot;WE&quot;},&quot;componentAttributes&quot;:{&quot;required&quot;:&quot;false&quot;,&quot;placeholder&quot;:null,&quot;relatedKeyField&quot;:null,&quot;relatedRecord&quot;:null,&quot;valueField&quot;:null,&quot;keyField&quot;:&quot;AccountNumber&quot;,&quot;subTitleField&quot;:&quot;BillingAddress&quot;,&quot;objectAPIName&quot;:&quot;Account&quot;}},&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;ocf_SHIPTO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;},{&quot;name&quot;:&quot;ocf_BILLTO&quot;,&quot;length&quot;:10,&quot;label&quot;:&quot;Bill To&quot;,&quot;isEditable&quot;:false,&quot;inputVariant&quot;:&quot;LOOKUP&quot;,&quot;inputOptions&quot;:{&quot;generalOptions&quot;:{&quot;sapPartnerFunction&quot;:&quot;RE&quot;},&quot;componentAttributes&quot;:{&quot;required&quot;:&quot;false&quot;,&quot;placeholder&quot;:null,&quot;relatedKeyField&quot;:null,&quot;relatedRecord&quot;:null,&quot;valueField&quot;:null,&quot;keyField&quot;:&quot;AccountNumber&quot;,&quot;subTitleField&quot;:&quot;BillingAddress&quot;,&quot;objectAPIName&quot;:&quot;Account&quot;}},&quot;display&quot;:true,&quot;direction&quot;:&quot;BOTH&quot;,&quot;apiName&quot;:&quot;ocf_BILLTO&quot;,&quot;apexType&quot;:&quot;STRINGX&quot;}],&quot;display&quot;:true,&quot;apiName&quot;:&quot;ocf_PARTNERS&quot;}</value>
+    </values>
+    <values>
+        <field>overcast__StructureName__c</field>
+        <value xsi:type="xsd:string">ocf_PARTNERS</value>
+    </values>
+</CustomMetadata>

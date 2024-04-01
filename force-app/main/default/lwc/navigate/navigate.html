@@ -1,0 +1,8 @@
+<template>
+    <template if:true={showChoice}>
+        <div class="slds-align_absolute-center">
+            <lightning-button label={choiceLabel1} value="choice1" variant="brand" onclick={handleChoice}></lightning-button>
+            <lightning-button label={choiceLabel2} value="choice2" variant="brand" onclick={handleChoice} class="slds-m-left_small"></lightning-button>
+        </div>
+    </template>
+</template>

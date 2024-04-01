@@ -1,0 +1,18 @@
+<template>
+  <lightning-modal-header label={label}></lightning-modal-header>
+  <lightning-modal-body>
+    <template if:true={recordList}>
+      <lightning-datatable key-field="Id" data={recordList} columns={columns} onrowselection={handleRowSelection}
+        max-row-selection="1">
+      </lightning-datatable>
+    </template>
+  </lightning-modal-body>
+  <lightning-modal-footer>
+    <div class="footer-buttons">
+      <div class="right-buttons">
+        <lightning-button label="Cancel" onclick={handleClose}></lightning-button>
+        <lightning-button label="Select" variant="brand" onclick={handleSelect} class="slds-var-p-left_medium"></lightning-button>
+      </div>
+    </div>
+  </lightning-modal-footer>
+</template>

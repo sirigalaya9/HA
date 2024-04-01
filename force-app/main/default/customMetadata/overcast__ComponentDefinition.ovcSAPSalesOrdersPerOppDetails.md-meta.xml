@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>SAP Sales Order Detail</label>
+    <protected>false</protected>
+    <values>
+        <field>overcast__APIEnabled__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__APISettings__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>overcast__ComponentDescriptor__c</field>
+        <value xsi:type="xsd:string">{&quot;showRefreshButton&quot;:true,&quot;showInNavigation&quot;:true,&quot;sections&quot;:[],&quot;navigationLabelType&quot;:&quot;dynamic&quot;,&quot;label&quot;:&quot;$Label.overcast.ovcSAPSalesOrderStatic&quot;,&quot;isActive&quot;:true,&quot;icon&quot;:&quot;&quot;,&quot;dynamicLabelOptions&quot;:{&quot;template&quot;:&quot;{0} {1}&quot;,&quot;parameters&quot;:[&quot;FIELD:ORDER_HEADERS_OUT.DOC_TYPE&quot;,&quot;TRIMFIELD:ORDER_HEADERS_OUT.DOC_NUMBER&quot;]},&quot;autoRun&quot;:true,&quot;actionButtons&quot;:[{&quot;name&quot;:&quot;btn314886550&quot;,&quot;label&quot;:&quot;Clone&quot;,&quot;action&quot;:{&quot;parameters&quot;:{&quot;SALES_DOCUMENTS&quot;:{&quot;VBELN&quot;:&quot;FIELD:ORDER_HEADERS_OUT.DOC_NUMBER&quot;}},&quot;componentOptions&quot;:{&quot;mode&quot;:&quot;Clone&quot;},&quot;componentDef&quot;:&quot;sapOrderClone&quot;,&quot;component&quot;:&quot;SalesOrderPoster&quot;}},{&quot;name&quot;:&quot;btn1002991069&quot;,&quot;label&quot;:&quot;Edit&quot;,&quot;action&quot;:{&quot;parameters&quot;:{&quot;SALES_DOCUMENTS&quot;:{&quot;VBELN&quot;:&quot;FIELD:ORDER_HEADERS_OUT.DOC_NUMBER&quot;}},&quot;componentDef&quot;:&quot;sapOrderEdit&quot;,&quot;component&quot;:&quot;SalesOrderPoster&quot;}}]}</value>
+    </values>
+    <values>
+        <field>overcast__ComponentID__c</field>
+        <value xsi:type="xsd:string">40086</value>
+    </values>
+    <values>
+        <field>overcast__CreatedDate__c</field>
+        <value xsi:type="xsd:dateTime">2023-09-21T11:13:32.000Z</value>
+    </values>
+    <values>
+        <field>overcast__Hidden__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>overcast__ID__c</field>
+        <value xsi:type="xsd:string">50173</value>
+    </values>
+    <values>
+        <field>overcast__Permissions__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__PluginClass__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>overcast__RequiredLicenses__c</field>
+        <value xsi:type="xsd:string">VUt7PJd4SEWOh+0bmJbIgWk0obgCd4sVUfgrsNLHRcNywIW1fOq4KCjH0gd7sofIqLgZ2MHb/IAr57i7jbmdkHDyq7S01XG3oGUfWB72ZJOvfAVXBeAi/NFfxg90S6vpn3Uu8CRHw2ukSyj9YZmE25tzhwhXOnWobH0+pQ/TTD0=</value>
+    </values>
+    <values>
+        <field>overcast__ScenarioName__c</field>
+        <value xsi:type="xsd:string">sapSalesOrderDetail</value>
+    </values>
+    <values>
+        <field>overcast__isSLPRequired__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>
