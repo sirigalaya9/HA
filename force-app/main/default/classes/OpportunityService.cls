@@ -16,6 +16,9 @@ public without sharing class OpportunityService
     public static Map<Id, Account> accountMap = new Map<Id, Account>();
     public static Map<Id, List<User_Sales_Organization__c>> useSaleOrgMap = new Map<Id, List<User_Sales_Organization__c>>();
     public static Map<Id, List<Quote>> oppQuotesMap = new Map<Id, List<Quote>>();
+    public static Set<String> salesOrganizations = new Set<String>();
+    public static Set<String> salesOffices = new Set<String>();
+    public static Set<String> salesGroups = new Set<String>();
     public static FINAL String TERRITORY_NAME = 'Hafele_Territories';
     
     //On Lead Conversion, if an Opportunity is created, we copy the Lead Items to the Opportunity Items
@@ -205,22 +208,21 @@ public without sharing class OpportunityService
     public static void assignEnterpriseStructure (List<Opportunity> mNewOpps, Map<Id, Opportunity> mOldOpps) { 
         List<Id> ownerIdList = new List<Id>();
         Set<Id> accountIdSet = new Set<Id>();
+        
+        
         for(Opportunity newOpp : mNewOpps){
             Opportunity oldOpp = mOldOpps != null ? mOldOpps.get(newOpp.Id) : null;
             
             //------- Opp Sales Area is changed OR on INSERT----------//
             if(oldOpp == null || // INSERT
                newOpp.User_Sales_Organization__c != oldOpp.User_Sales_Organization__c ||
-               newOpp.Sales_Office__c != oldOpp.Sales_Office__c ||
-               newOpp.Sales_Group__c != oldOpp.Sales_Group__c ||
+               //newOpp.Sales_Office__c != oldOpp.Sales_Office__c ||
+               //newOpp.Sales_Group__c != oldOpp.Sales_Group__c ||
                newOpp.OwnerId != oldOpp.OwnerId){ 
                    ownerIdList.add(newOpp.OwnerId);
                    accountIdSet.add(newOpp.AccountId);
                }   
         }
-        
-        //system.debug('ownerIdList ' +ownerIdList);
-        //system.debug('accountIdSet ' +accountIdSet);
         
         if(!accountIdSet.isEmpty()){
             List<Account> accounts = [SELECT Id, overcast__SAP_BP_Number__c, Prospect__c,CurrencyISOCode, 
@@ -251,7 +253,7 @@ public without sharing class OpportunityService
             
             system.debug('useSaleOrgMap ' +useSaleOrgMap);
         }
-        
+ 
         for(Opportunity newOpp : mNewOpps){
             Opportunity oldOpp = mOldOpps != null ? mOldOpps.get(newOpp.Id) : null;
             //------- User_Sales_Organization__c is changed OR on INSERTED----------//
@@ -261,16 +263,47 @@ public without sharing class OpportunityService
                     system.debug('assignSalesArea');
                     assignSalesArea(newOpp, oldOpp);
                     
+                    //--------assignTerritory-----------
+                    assignTerritory(mNewOpps,salesOrganizations, salesOffices, salesGroups);
+                    
                 }
-                else if(newOpp.Sales_Office__c != oldOpp.Sales_Office__c ||
+                /*else if(newOpp.Sales_Office__c != oldOpp.Sales_Office__c ||
                         newOpp.Sales_Group__c != oldOpp.Sales_Group__c ){
                             system.debug('assignTerritory');
-                            assignTerritory(newOpp);
-                        }
+                            salesOffices.add(newOpp.Sales_Office__c);
+                            salesGroups.add(newOpp.Sales_Group__c);
+                            //assignTerritory(newOpp);
+                        }*/
             } catch (Exception e) {
                 newOpp.addError('Sales area assignment failed: ' + e.getMessage());
             }
-            
+        }    
+    }
+    
+    private static void assignTerritory(List<Opportunity> mNewOpps, Set<String> salesOrganizations, Set<String> salesOffices, Set<String> salesGroups) {
+        Map<String, Territory2> keyToTerritoryMap = new Map<String, Territory2>();
+        
+        for (Territory2 terr : [SELECT Id, Sales_Organization__c, Sales_Office__c, Sales_Group__c 
+                                FROM Territory2 
+                                WHERE Territory2Model.DeveloperName =: TERRITORY_NAME
+                                AND Sales_Organization__c IN :salesOrganizations 
+                                AND Sales_Office__c IN :salesOffices 
+                                AND Sales_Group__c IN :salesGroups]) 
+        {
+            keyToTerritoryMap.put(terr.Sales_Organization__c + terr.Sales_Office__c + terr.Sales_Group__c, terr);
+        }
+        
+        System.debug('territories==>' + salesOrganizations + '-' + salesOffices + '-' + salesGroups + '-' + keyToTerritoryMap);
+        
+        for(Opportunity newOpp : mNewOpps){
+            String key = newOpp.Sales_Organization__c + newOpp.Sales_Office__c + newOpp.Sales_Group__c;
+            System.debug('newOpp Sales Area ==>' + key);
+            if(keyToTerritoryMap.containsKey(key)){
+                newOpp.Territory2Id = keyToTerritoryMap.get(key).Id;
+            }
+            else if(newOpp.User_Sales_Organization__c == null){ 
+                newOpp.Territory2Id = null;
+            }
         }
     }
 
@@ -280,7 +313,7 @@ public without sharing class OpportunityService
         if(useSaleOrgMap.containsKey(newOpp.OwnerId)){
             if((useSaleOrgMap.get(newOpp.OwnerId).size()==1 && (oldOpp == null || newOpp.OwnerId != oldOpp.OwnerId))
                || (newOpp.User_Sales_Organization__c != null)
-                ){
+              ){
                   system.debug('User has 1 SalesOrg assigned OR Manual populate User Sales Orgs');
                   system.debug('newOpp.User_Sales_Organization__c : '+newOpp.User_Sales_Organization__c);
                   //---------- Inserted:User has 1 SalesOrg assigned OR Updated:Manual populate User Sales Orgs OR Owner is changed-----
@@ -295,6 +328,7 @@ public without sharing class OpportunityService
                               newOpp.Sales_Organization__c = uso.Code__c;
                               newOpp.Sales_Office__c = null;
                               newOpp.Sales_Group__c = null;
+                              salesOrganizations.add(newOpp.Sales_Organization__c);
                               break;
                           }                                       
                       } 
@@ -302,6 +336,7 @@ public without sharing class OpportunityService
                   else{
                       newOpp.User_Sales_Organization__c = useSaleOrgMap.get(newOpp.OwnerId)[0].Id; //Auto assign User's SalesOrg
                       newOpp.Sales_Organization__c = useSaleOrgMap.get(newOpp.OwnerId)[0].Code__c;// Assign Sales Org
+                      salesOrganizations.add(newOpp.Sales_Organization__c);
                   }
                   
                   if(accountMap.get(newOpp.AccountId).SAP_Customer_Number__c != null && accountMap.get(newOpp.AccountId).No_of_Sales_Area__c > 0){
@@ -316,6 +351,8 @@ public without sharing class OpportunityService
                                  //newOpp.Sales_Organization__c = sa.Sales_Organization__c;
                                  newOpp.Sales_Office__c = sa.Sales_Office__c; // Assign Sales Office
                                  newOpp.Sales_Group__c = sa.Sales_Group__c; // Assign Sales Group
+                                 salesOffices.add(newOpp.Sales_Office__c);
+                                 salesGroups.add(newOpp.Sales_Group__c);
                                  break;
                              }   
                       }
@@ -350,10 +387,6 @@ public without sharing class OpportunityService
                        newOpp.Territory2Id = null;
                        system.debug('User has multiple SalesOrg assigned OR Removed');
                    }
-            /*else if(useSaleOrgMap.get(newOpp.OwnerId).size()>1 && newOpp.OwnerId != oldOpp.OwnerId)
-            {
-                newOpp.addError('New Owner have multiple SalesOrg');
-            }*/
         }
         else{
             //-------------------- User has no SalesOrg assigned -----------------------
@@ -379,27 +412,8 @@ public without sharing class OpportunityService
             }
         }
         
-        if(newOpp.Sales_Organization__c != null){
-            assignTerritory(newOpp);
-        }
-        
     }
-    
-    private static void assignTerritory(Opportunity newOpp) {
-        List<Territory2> territories = [SELECT Id, Name, Sales_Organization__c, Sales_Office__c, Sales_Group__c 
-                                        FROM Territory2 
-                                        WHERE Territory2Model.DeveloperName =: TERRITORY_NAME
-                                        AND Sales_Organization__c =: newOpp.Sales_Organization__c 
-                                        AND Sales_Office__c =: newOpp.Sales_Office__c 
-                                        AND Sales_Group__c =: newOpp.Sales_Group__c LIMIT 1];
-        
-        system.debug('territories : '+territories);
-        if(!territories.isEmpty()){
-            newOpp.Territory2Id = territories[0].Id;
-        }else newOpp.Territory2Id = null;
-        
-    }
-    
+  
     public static void syncProjectToAllRelatedQuotes (List<Opportunity> mNewOpps, Map<Id, Opportunity> mOldOpps) {       
         try{
             Map<Id, Id> oppProjectMap = new Map<Id, Id>();
