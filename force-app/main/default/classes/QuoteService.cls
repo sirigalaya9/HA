@@ -8,17 +8,20 @@
 * Version      Author                             Modification
 * ==============================================================================
 * 14.03.2024  manu.voramontri@kliqxe.com         Initial Version
-* 25.03.2024  ly.sirigalaya@kliqxe.com           RelateOpportunityToQuote
+* 25.03.2024  ly.sirigalaya@kliqxe.com           relateOpportunityToQuote
+* 01.04.2024  ly.sirigalaya@kliqxe.com           syncSAPQuoteToOpportunity
 */
+
 public without sharing class QuoteService 
 {
 
     public static Boolean quoteSyncRunning = false;
     
-    public static void RelateOpportunityToQuote (List<Quote> mNewQuote) {
+    // Before Quote created in SF, Create Opp and link
+    public static void relateOpportunityToQuote(List<Quote> quotes) {
         try
         {
-            system.debug('RelateOpportunityToQuote : '+mNewQuote);
+            system.debug('relateOpportunityToQuote : '+quotes);
             List<Opportunity> oppsToCreate = new List<Opportunity>();
             Set<Id> successOppIds = new Set<Id>();
             Map<String, Account> accountMap = new Map<String, Account>();
@@ -27,10 +30,13 @@ public without sharing class QuoteService
             Set<String> sAPQuoteNumbers = new Set<String>();
             Id stdPricebookId;
 
-            for(Quote q : mNewQuote) {
-                if(q.OpportunityId == null ){
+            for(Quote q : quotes) {
+                //system.debug('New Quote : '+q);
+                //system.debug('q.OpportunityId : '+q.OpportunityId);
+                //system.debug('q.SAP_Quote_Number__c : '+q.SAP_Quote_Number__c);
+                if(q.OpportunityId == null && q.SAP_Quote_Number__c != null){
                     sAPAccountNumbers.add(q.SAP_Customer_Number__c);
-                    sAPQuoteNumbers.add(q.SAP_Quote_Number__c);
+                    //sAPQuoteNumbers.add(q.SAP_Quote_Number__c);
                 }
             }
             
@@ -39,15 +45,7 @@ public without sharing class QuoteService
                     accountMap.put(acc.SAP_Customer_Number__c, acc); // SAP Id , Account
                 }
             }
-             system.debug(accountMap);
-            
-            if(!sAPQuoteNumbers.isEmpty()){
-                for(Quote q : [SELECT Id,SAP_Quote_Number__c FROM Quote WHERE SAP_Quote_Number__c IN: sAPQuoteNumbers]) {
-                    exitingSAPQuoteMap.put(q.SAP_Quote_Number__c, true);
-                }
-            }
-            
-            system.debug(exitingSAPQuoteMap);
+            //system.debug(accountMap);
             
             if (!Test.isRunningTest()){
                 stdPricebookId   = [select id, name from Pricebook2 where isStandard = true limit 1].Id;
@@ -56,14 +54,11 @@ public without sharing class QuoteService
                 stdPricebookId = Test.getStandardPricebookId();
             }
             
-            for(Quote q : mNewQuote) {
-                /*if(exitingSAPQuoteMap.containsKey(q.SAP_Quote_Number__c)){
-                    q.addError('Duplicate SAP Quote Number: A quote with number '+q.SAP_Quote_Number__c+' already exists.');
-                    //system.debug('Duplicate SAP Quote Number: A quote with number '+q.SAP_Quote_Number__c+' already exists.');
-                }*/
+            for(Quote q : quotes) {
+                if(q.SAP_Quote_Number__c == null){continue;}
+                
                 if(!accountMap.containsKey(q.SAP_Customer_Number__c)) {
                     q.addError('Account ' +q.SAP_Customer_Number__c+ ' is not found. Please verify the account number or create a new account.');
-                    //system.debug('Account' +q.SAP_Customer_Number__c+ 'is not found. Please verify the account number or create a new account.');
                 }
                 else if(q.OpportunityId == null && accountMap.containsKey(q.SAP_Customer_Number__c)) {
                     Integer qNumber = 1;
@@ -112,7 +107,7 @@ public without sharing class QuoteService
                         mapQuoteOpp.put(opp.Backup_Quote_Id__c , opp);
                     }
                     
-                    for(Quote q : mNewQuote) {
+                    for(Quote q : quotes) {
                         if(q.OpportunityId == null && mapQuoteOpp.containsKey(q.SAP_Quote_Number__c)) {
                             q.OpportunityId = mapQuoteOpp.get(q.SAP_Quote_Number__c).Id;
                             q.CurrencyIsoCode = q.CurrencyIsoCode;
@@ -125,6 +120,43 @@ public without sharing class QuoteService
             }  
         }
         catch (Exception e) { LogUtil.emit(e, new Map<String, String>{}); } 
+    } 
+    
+    // After Quote created, Sync Quote using SyncQuoteQueueable class
+    public static void syncSAPQuoteToOpportunity(List<Quote> quotes) { 
+        Set<Id> quoteIds = new Set<Id>();
+        List<Opportunity> oppsToUpdate = new List<Opportunity>();
+        Map<Id, Id> quoteMap = new Map<Id, Id>();
+        System.debug('syncSAPQuoteToOpportunity: ' + quotes);
+        
+        try{
+            for (Quote qt : quotes){
+                if(qt.SAP_Quote_Number__c != null){
+                    quoteIds.add(qt.Id);
+                }
+            }
+            
+            String integrationUser = Settings.INTEGRATION_USER;
+			system.debug('integrationUser=> '+integrationUser);
+            
+            List<Quote> sAPQuotes = [SELECT Id, OpportunityId, SAP_Quote_Number__c 
+                                     FROM Quote 
+                                     WHERE Id IN :quoteIds
+                                     AND CreatedBy.Username = :integrationUser
+                                     AND isSyncing = FALSE];
+            
+            system.debug('sAPQuotes=> '+sAPQuotes);
+            
+            if(!sAPQuotes.isEmpty()){
+                for (Quote qt : sAPQuotes){
+                    quoteMap.put(qt.Id, qt.OpportunityId);
+                }
+                system.debug('quoteMap=> '+quoteMap);
+                ID jobID = System.enqueueJob(new SyncQuoteQueueable(quoteMap));
+                //System.debug('jobID'+jobID);
+            }
+        }
+        catch (Exception e) { LogUtil.emit(e, new Map<String, String>{}); }
     }
 
     public static void syncQuoteToOpportunityAndRelatedQuotes(List<Quote> quotes)
