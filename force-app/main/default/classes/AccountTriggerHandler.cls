@@ -1,3 +1,15 @@
+/*
+* Account Trigger Handler
+* @author long@kliqxe.com
+* @since 26.03.2024
+* @version 26.03.2024
+* @log 
+* ==============================================================================
+* Version      Author                             Modification
+* ==============================================================================
+* 26.03.2024  long@kliqxe.com         			 Initial Version
+*/
+
 public without sharing class AccountTriggerHandler {
     @testVisible
     private static TriggerOperation triggerContext;
@@ -48,5 +60,4 @@ public without sharing class AccountTriggerHandler {
             AccountService.populateOwner(accountToCheck);
         }
     }
-    
 }

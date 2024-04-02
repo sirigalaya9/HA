@@ -1,3 +1,16 @@
+/*
+* Opportunity Trigger Handler
+* @author ly.sirigalaya@kliqxe.com
+* @since 01.03.2024
+* @version 01.03.2024
+* @log 
+* ==============================================================================
+* Version      Author                             Modification
+* ==============================================================================
+* 01.03.2024  ly.sirigalaya@kliqxe.com         	Initial Version
+* 20.03.2024  ly.sirigalaya@kliqxe.com         	syncProjectToAllRelatedQuotes
+*/
+
 public without sharing class OpportunityTriggerHandler {
     
     public void onBeforeInsert() {
@@ -9,12 +22,7 @@ public without sharing class OpportunityTriggerHandler {
         system.debug('OpportunityTrigger onBefore Update');
         OpportunityService.assignEnterpriseStructure((List<Opportunity>)Trigger.New, (Map<Id, Opportunity>)Trigger.oldMap);
     }
-    
-    /*public void onAfterInsert() {
-        system.debug('OpportunityTrigger onAfter Insert');
-        OpportunityService.copyLeadItemsToOppItems((List<Opportunity>) Trigger.New);
-    }*/
-    
+
     public void onAfterUpdate() {
         system.debug('OpportunityLineItemTrigger onAfter Update');
         System.debug('quoteSyncRunning: ' + QuoteService.quoteSyncRunning);
@@ -24,7 +32,5 @@ public without sharing class OpportunityTriggerHandler {
             OpportunityService.syncProjectToAllRelatedQuotes((List<Opportunity>)Trigger.New, (Map<Id, Opportunity>)Trigger.oldMap);
             QuoteService.quoteSyncRunning = false;
         }
-    }
-    
-    
+    }   
 }

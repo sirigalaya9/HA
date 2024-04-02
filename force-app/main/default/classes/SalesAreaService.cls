@@ -1,3 +1,15 @@
+/*
+* SalesArea Service
+* @author long@kliqxe.com
+* @since 28.03.2024
+* @version 28.03.2024
+* @log 
+* ==============================================================================
+* Version      Author                             Modification
+* ==============================================================================
+* 27.03.2024  long@kliqxe.com         			 Initial Version
+*/
+
 public without sharing class SalesAreaService {
     public static void assignTerritory(List<Sales_Area__c> salesAreas) { 
         List<ObjectTerritory2Association> territoryAssociationsToInsert = new List<ObjectTerritory2Association>();

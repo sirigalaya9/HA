@@ -1,3 +1,15 @@
+/*
+* SalesArea Trigger Handler
+* @author ly.sirigalaya@kliqxe.com
+* @since 27.02.2024
+* @version 27.02.2024
+* @log 
+* ==============================================================================
+* Version      Author                             Modification
+* ==============================================================================
+* 27.02.2024  ly.sirigalaya@kliqxe.com         			 Initial Version
+*/
+
 public class DataCompletenessService {
 
     public static String getRegex(String objectName, String countryCode) {

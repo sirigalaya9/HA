@@ -1,3 +1,16 @@
+/*
+* QuoteLineItem Trigger Handler
+* @author ly.sirigalaya@kliqxe.com
+* @since 12.03.2024
+* @version 12.03.2024
+* @log 
+* ==============================================================================
+* Version      Author                             Modification
+* ==============================================================================
+* 12.03.2024  ly.sirigalaya@kliqxe.com         	Initial Version
+* 14.03.2024  manu.voramontri@kliqxe.com        syncQuoteItemsToOpportunityItems
+* 28.03.2024  long@kliqxe.com         			populatePricebookID
+*/
 public class QuoteLineItemTriggerHandler {
     
     public void onBeforeInsert() {

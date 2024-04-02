@@ -1,3 +1,15 @@
+/*
+* SalesArea Trigger Handler
+* @author long@kliqxe.com
+* @since 27.03.2024
+* @version 27.03.2024
+* @log 
+* ==============================================================================
+* Version      Author                             Modification
+* ==============================================================================
+* 27.03.2024  long@kliqxe.com         			 Initial Version
+*/
+
 public without sharing class SalesAreaTriggerHandler {
     @testVisible
     private static TriggerOperation triggerContext;

@@ -1,3 +1,15 @@
+/*
+* Account Service
+* @author long@kliqxe.com
+* @since 26.03.2024
+* @version 26.03.2024
+* @log 
+* ==============================================================================
+* Version      Author                             Modification
+* ==============================================================================
+* 26.03.2024  long@kliqxe.com         			 Initial Version
+*/
+
 public without sharing class AccountService {
     public static List<Account>  populateOwner(List<Account> accounts) {
         Set<String> sapUserIds = new Set<String>();

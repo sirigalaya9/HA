@@ -1,3 +1,16 @@
+/*
+* OpportunityLineItem Service
+* @author ly.sirigalaya@kliqxe.com
+* @since 05.03.2024
+* @version 05.03.2024
+* @log 
+* ==============================================================================
+* Version      Author                             Modification
+* ==============================================================================
+* 05.03.2024  ly.sirigalaya@kliqxe.com         	Initial Version
+* 14.03.2024  manu.voramontri@kliqxe.com        syncQuoteLineItems
+*/
+
 public class OpportunityLineItemService {
     
     public static Map<Id, Account> accountMap = new Map<Id, Account>();

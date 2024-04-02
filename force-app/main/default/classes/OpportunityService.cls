@@ -10,6 +10,7 @@
 * 29.02.2024   manu.voramontri@kliqxe.com         Initial Version
 * 29.02.2024   ly.sirigalaya@kliqxe.com        	  Enterprise Structure
 */
+
 public without sharing class OpportunityService 
 {
     public static Map<Id, Account> accountMap = new Map<Id, Account>();
