@@ -8,9 +8,38 @@
 * Version      Author                             Modification
 * ==============================================================================
 * 30.01.2024   ly.sirigalkaya@kliqxe.com         Initial Version
-* 22.02.2024   ly.sirigalkaya@kliqxe.com         get SAP Price
+* 22.02.2024   ly.sirigalkaya@kliqxe.com         get SAP Price (STD)
+* 11.04.2024   ly.sirigalkaya@kliqxe.com         getSAPPricing (Custom)
 */
 public with sharing class QuoteProductController {
+     
+    @AuraEnabled
+    public static Map<String, Object> getSAPPricing(Id recordId, List<QuoteLineItem> quoteItems){
+        Map<String, Object> returnedData = new Map<String, Object>();
+        
+        //Validation 
+        //Opportunity.Sales_Organization__c != null
+        //Account.overcast__SAP_BP_Number__c != null
+        //There is Line item
+        
+        List<Quote> quote =  [SELECT Id, OpportunityId, Opportunity.CloseDate, Opportunity.AccountId, CurrencyIsoCode,
+                              Opportunity.Sales_Organization__c, Opportunity.Sales_Office__c,Opportunity.Division__c, Opportunity.Distribution_Channel__c, 
+                              Requested_Delivery_Date__c, Account.overcast__SAP_BP_Number__c
+                              //Account.Customer_SAP_Number__c   
+                              FROM Quote
+                              WHERE Id = :recordId LIMIT 1];
+        
+        if(!quote.isEmpty() && !quoteItems.isEmpty()){
+            if(quote[0].Opportunity.Sales_Organization__c != null){
+                returnedData = SAPQuotePricingSimulateService.sendRequest(quote[0], quoteItems);   
+            }
+            else{
+                String error = 'Please assign SalesOrg on Opportunity';
+                throw new AuraHandledException(error);
+            }
+        }
+        return returnedData;
+    }
 
     @AuraEnabled
     public static PricingATPCallout.ReturnValues getPriceATP(Id recordId, List<QuoteLineItem> quoteItems)

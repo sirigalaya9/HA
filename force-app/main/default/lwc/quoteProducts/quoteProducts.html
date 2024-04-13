@@ -1,0 +1,246 @@
+<template>
+  <template if:true={hasQLIFields}>
+    <div class="slds-col modal-footer slds-modal__footer">
+      <lightning-layout>
+          <lightning-layout-item size="5" class="slds-text-result">
+              <div class="slds-page-header__col-title">
+                  <div class="slds-media slds-p-top_x-small">
+                      <div class="slds-media__figure">
+                          <span class="slds-icon_container" title="custom">
+                              <lightning-icon icon-name="standard:quotes" size="small"></lightning-icon>
+                          </span>
+                      </div>
+                      <div class="slds-media__body">
+                          <h2 class="slds-card__header-title">
+                              <span
+                                  class="slds-card__header-link slds-truncate slds-m-right_small slds-truncate slds-align-middle"
+                                  title="Product">{qliObjInfos.labelPlural} ({numberOfRecords})</span>
+                          </h2>
+                      </div>
+                  </div>
+              </div>
+          </lightning-layout-item>
+
+          <lightning-layout-item size="7" style="display: flex; align-items: center;justify-content: end;">
+              <lightning-button variant="neutral" label='Check Pricing (Custom)' icon-name="utility:moneybag"
+                  class="slds-p-right_small" onclick={handleCheckPrice}
+                  disabled={isCheckPricingLocked}></lightning-button>
+          </lightning-layout-item>          
+      </lightning-layout>
+  </div>
+  <div>
+      <table
+          class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-max-medium-table_stacked-horizontal">
+          <thead>
+              <tr class="slds-text-title--caps" style="height:2rem">
+                  <th class="" scope="col" style="width:5%">
+                      <div class="" title="No.">{label.No}</div>
+                  </th>
+                  <th class="" scope="col" style="width:12%">
+                      <div class="" title="Product"><span style="color:red">* </span>{productFields.Name.label}
+                      </div>
+                  </th>
+                  <th class="slds-cell-wrap" scope="col" style="width:12%">
+                      <div class="" title="Description">{qliFields.Description.label}</div>
+                  </th>
+                  <th class="slds-cell-wrap" scope="col" style="width:8%">
+                      <div class="" title="Base Price">Base Price
+                      </div>
+                  </th>
+                  <th class="slds-cell-wrap" scope="col" style="width:8%">
+                      <div class="" title="Std Price">Std Price
+                      </div>
+                  </th>
+                  <th class="slds-cell-wrap" scope="col" style="width:8%">
+                      <div class="" title="Manual Price">Manual Price
+                      </div>
+                  </th>
+                  <th class="slds-cell-wrap" scope="col" style="width:8%">
+                      <div class="" title="Discount">Discount%
+                      </div>
+                  </th>
+                  <th class="" scope="col" style="width:8%">
+                      <div class="" title="Quantity"><span style="color:red">* </span>{qliFields.Quantity.label}
+                      </div>
+                  </th>                  
+                  <th class="slds-cell-wrap" scope="col" style="width:8%">
+                      <div class="" title="Sales Price"><span style="color:red">*
+                          </span>{qliFields.UnitPrice.label}
+                      </div>
+                  </th>
+                  <th class="slds-cell-wrap" scope="col" style="width:8%">
+                      <div class="" title="Total Price">{qliFields.TotalPrice.label}</div>
+                  </th>
+                  <th class="slds-cell-wrap" scope="col" style="width:8%">
+                      <div class="" title="Delivery Date">{qliFields.Delivery_Date__c.label}</div>
+                  </th>
+                  <th class="slds-cell-wrap" scope="col" style="width:8%">
+                      <div class="" title="Gross Profit">Gross Profit</div>
+                  </th>
+                  <th class="" scope="col" style="width:5%">
+                      <div class="slds-text-align_center" title="Remove">{label.Remove}</div>
+                  </th>
+              </tr>
+          </thead>
+          <tbody>
+              <template for:each={items} for:item="item">
+                  <tr key={item.Id} class={item.rejectedClass}>
+                      <td>
+                          {item.index}
+                      </td>
+                      <td data-label="Product Id">
+                          <lightning-record-edit-form object-api-name="OpportunityLineItem">
+                              <div class="slds-grid">
+                                  <div class="slds-col">
+                                      <template if:false={item.Id}>
+                                          <template if:true={item.selection}>
+                                              <c-lookup label="" data-name="Product2Id" data-index={item.index}
+                                                  errors={item.errors} onsearch={handleSearch}
+                                                  onselectionchange={handleSelectionChange}
+                                                  placeholder="Search Products..." scroll-after-n-items="10"
+                                                  selection={item.selection} required>
+                                              </c-lookup>
+                                          </template>
+                                          <template if:false={item.selection}>
+                                              <c-lookup label="" data-name="Product2Id" data-index={item.index}
+                                                  errors={item.errors} onsearch={handleSearch}
+                                                  onselectionchange={handleSelectionChange}
+                                                  placeholder="Search Products..." scroll-after-n-items="10"
+                                                  required>
+                                              </c-lookup>
+                                          </template>
+                                      </template>
+                                      <template if:true={item.Id}>
+                                          <div style="display: none">
+                                              <c-lookup label="" data-name="Product2Id" data-index={item.index}
+                                                  errors={item.errors} onsearch={handleSearch}
+                                                  onselectionchange={handleSelectionChange}
+                                                  placeholder="Search Products..." scroll-after-n-items="10"
+                                                  selection={item.selection} disabled>
+                                              </c-lookup>
+                                          </div>
+                                          <a if:false={isQuoteLocked} class="slds-cell-wrap" href={item.url}
+                                              tabindex="-1" target="_blank" style="font-weight: bold;"
+                                              data-id={item.Id}
+                                              data-objname="OpportunityLineItem">{item.Product2.Product_Code_Format__c}</a>
+                                          <div if:true={isQuoteLocked} class="slds-cell-wrap"
+                                              style="font-weight: bold;">{item.Product2.Product_Code_Format__c}
+                                          </div>
+                                      </template>
+                                  </div>
+                              </div>
+                          </lightning-record-edit-form>
+                      </td>
+                      <td data-label="Product Description">
+                          <div class="slds-truncate" title="">
+                              <lightning-textarea name="productDescription" value={item.Description}
+                                  variant="label-hidden" onchange={handleItemChange} data-field="Description"
+                                  data-index={item.index} disabled>
+                              </lightning-textarea>
+                          </div>
+                      </td>                      
+                      <td data-label="Base Price" class="slds-text-align_center">
+                          <lightning-input type="number" name="basePrice" value={item.Base_Price__c}
+                              variant="label-hidden" step="0.01" onchange={handleItemChange}
+                              data-field="Base_Price__c" data-index={item.index} disabled>
+                          </lightning-input>
+                      </td>
+                      <td data-label="Std Price" class="slds-text-align_center">
+                          <lightning-input type="number" name="stdPrice" value={item.Std_Price__c}
+                              variant="label-hidden" step="0.01" onchange={handleItemChange}
+                              data-field="Std_Price__c" data-index={item.index} disabled>
+                          </lightning-input>
+                      </td>
+                      <td data-label="Manual Price" class="slds-text-align_center">
+                          <lightning-input type="number" name="manualPrice" value={item.Manual_Price__c}
+                              variant="label-hidden" step="0.01" onchange={handleItemChange}
+                              data-field="Manual_Price__c" data-index={item.index}>
+                          </lightning-input>
+                      </td>
+                      <td data-label="Discount" class="slds-text-align_center">
+                          <lightning-input type="number" value={item.Discount__c} variant="label-hidden"
+                              step="0.01" onchange={handleItemChange} data-field="Discount__c"
+                              data-index={item.index} formatter="percent-fixed" min="0"
+                              message-when-range-underflow="Must be positive" max="100"
+                              message-when-range-overflow="Can't be over 100%">>
+                          </lightning-input>
+                      </td>
+                      <td data-label="Quantity" class="slds-text-align_center">
+                          <lightning-input type="number" name="quantity" value={item.Quantity}
+                              variant="label-hidden" required="true" onchange={handleItemChange}
+                              data-field="Quantity" min="0" message-when-range-underflow="Must be positive"
+                              disabled={isQuoteLocked} data-index={item.index}></lightning-input>
+                      </td>                      
+                      <td data-label="Sales Price" class="slds-text-align_center">                          
+                          <div class="slds-truncate slds-grid slds-wrap center" title="">
+                              <div class="slds-size_9-of-12">
+                                  <div class="slds-text-align_center">
+                                      <lightning-input type="number" name="salesPrice" value={item.UnitPrice}
+                                          variant="label-hidden" step="0.01" required="true"
+                                          onchange={handleItemChange} data-field="UnitPrice"
+                                          data-index={item.index} disabled>
+                                      </lightning-input>
+                                  </div>
+                              </div>
+                              <div class="slds-size_3-of-12">
+                                  <div class="slds-text-align_center">
+                                      <lightning-icon if:true={item.is_SAP_Price__c}
+                                          class="checkpriceiconcolor slds-p-left_x-small"
+                                          icon-name="utility:success" size="x-small"
+                                          alternative-text="Price checked" title="Price checked"
+                                          style="cursor:pointer" data-index={item.index}></lightning-icon>
+                                  </div>
+                              </div>
+                          </div>
+
+                      </td>
+                      <td data-label="Total Price" class="slds-text-align_center">
+                          <div class="slds-truncate" title="">
+                              <lightning-input type="number" value={item.TotalPrice} variant="label-hidden"
+                                  step="0.01" onchange={handleItemChange} data-field="TotalPrice"
+                                  data-index={item.index} disabled>
+                              </lightning-input>
+                          </div>
+                      </td>
+                      <td data-label="Delivery Date" class="slds-text-align_center">
+                          <lightning-input type="date" value={item.Delivery_Date__c} variant="label-hidden"
+                              data-field="Delivery_Date__c" disabled data-index={item.index}>
+                          </lightning-input>
+                      </td>
+                      <td data-label="Gross_Profit__c" class="slds-text-align_center">
+                          <lightning-input type="number" value={item.Gross_Profit__c} variant="label-hidden"
+                                  data-field="Gross_Profit__c"
+                                  data-index={item.index} disabled>
+                              </lightning-input>
+                      </td>                      
+                      <td>
+                          <div class="slds-text-align_center">
+                              <lightning-icon if:true={item.disabledRemove} class="disabled-remove-iconcolor"
+                                  icon-name="utility:delete" size="small" alternative-text="Remove" title="Remove"
+                                  data-index={item.index}></lightning-icon>
+                              <lightning-icon if:false={item.disabledRemove} class="remove-iconcolor"
+                                  icon-name="utility:delete" size="small" alternative-text="Remove" title="Remove"
+                                  style="cursor:pointer" onclick={removeItem}
+                                  data-index={item.index}></lightning-icon>
+                          </div>
+                      </td>
+                  </tr>
+              </template>
+              <tr>
+                  <td colspan="19">
+                      <div class="slds-text-align_left">
+                          <lightning-button variant="brand" label={label.Add} icon-name="utility:add"
+                              icon-position="right" title="Add Product" onclick={addItem}
+                              disabled={isQuoteLocked}></lightning-button>
+                      </div>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  <template if:true={showSpinner}>
+    <lightning-spinner variant="brand" size="large">
+    </lightning-spinner>
+</template>
+  </template>
+</template>

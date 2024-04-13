@@ -1,21 +1,21 @@
 <!-- sldsValidatorIgnore -->
 <template>
-  <lightning-modal-header label="Create Quote"></lightning-modal-header>
+  <lightning-modal-header label=""></lightning-modal-header>
   <lightning-modal-body>
     <lightning-spinner if:true={showSpinner} variant="brand"></lightning-spinner>
     <lightning-record-edit-form object-api-name="Quote" record-id={recordId} density="comfy">
 
-      <lightning-card title="Header">
-        <lightning-layout multiple-rows="true" horizontal-align="center">
+      <lightning-card title="Quote Header">
+        <lightning-layout multiple-rows="true">
           <lightning-layout-item size="4" class="">
-            <lightning-input-field field-name="Sales_Organization__c"> </lightning-input-field>
+            <lightning-input-field field-name="Document_Type__c" value='ZQS' class="" disabled="true"> </lightning-input-field>
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="Sales_Organization__c" class=""> </lightning-input-field>
           </lightning-layout-item>
           <lightning-layout-item size="4" class="">
             <lightning-input-field field-name="Sales_Office__c"> </lightning-input-field>
-          </lightning-layout-item>
-          <lightning-layout-item size="4" class="">
-            <lightning-input-field field-name="Customer_PO_Number__c" onchange={handleInputChange}> </lightning-input-field>
-          </lightning-layout-item>
+          </lightning-layout-item>          
           <lightning-layout-item size="4" class="">
             <lightning-input-field field-name="Division__c"> </lightning-input-field>
           </lightning-layout-item>
@@ -23,7 +23,13 @@
             <lightning-input-field field-name="Distribution_Channel__c"> </lightning-input-field>
           </lightning-layout-item>
           <lightning-layout-item size="4" class="">
-            <lightning-input-field field-name="zDiscount__c" onchange={handleInputChange}> </lightning-input-field>
+            <lightning-input-field field-name="Customer_PO_Number__c" value={poNumber} data-field="Customer_PO_Number__c" onchange={handleInputChange}> </lightning-input-field>
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="Requested_Delivery_Date__c" data-field="Requested_Delivery_Date__c" onchange={handleInputChange}> </lightning-input-field>
+          </lightning-layout-item>          
+          <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="Header_Discount__c" data-field="Header_Discount__c" onchange={handleInputChange}> </lightning-input-field>
           </lightning-layout-item>
           <lightning-layout-item size="4" class="">
             <!-- <lightning-input-field field-name="Incoterms_1__c"> </lightning-input-field> -->
@@ -44,9 +50,36 @@
             </div>
           </lightning-layout-item>
           <lightning-layout-item size="4" class="">
-            <lightning-input-field field-name="Incoterms_2__c" onchange={handleInputChange}> </lightning-input-field>
+            <lightning-input-field field-name="Incoterms_2__c" data-field="Incoterms_2__c" onchange={handleInputChange}> </lightning-input-field>
           </lightning-layout-item>
-          <lightning-layout-item size="4" class=""></lightning-layout-item>
+          <!-- <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="Quote_Reason__c" onchange={handleInputChange}> </lightning-input-field>
+          </lightning-layout-item> -->
+          <lightning-layout-item size="4" class="">
+            <!-- <lightning-input-field field-name="Ship_To__c"> </lightning-input-field> -->
+
+
+            <div class="slds-form-element slds-form-element_stacked">
+              <label class="slds-form-element__label" for="quoteReason">Quote Reason</label>
+              <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                <input type="text" id="quoteReason" class="slds-input" value={quoteReasonId} />
+                <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Quote Reason"
+                  onclick={getReason}>
+                  <lightning-icon icon-name="utility:search" alternative-text="Approved"
+                    size="x-small"></lightning-icon>
+                  <span class="slds-assistive-text">Quote Reason</span>
+                </button>
+                <!-- <lightning-button-icon icon-name="utility:search" onclick={getShipTo}
+                        alternative-text="Ship To" class="slds-input__icon slds-input__icon_right" size="small">
+                      </lightning-button-icon> -->
+              </div>
+            </div>
+
+
+          </lightning-layout-item>
+          <lightning-layout-item size="4" class="">
+            <lightning-input-field field-name="Gross_Profit__c" data-field="Gross_Profit__c" > </lightning-input-field>
+          </lightning-layout-item>
         </lightning-layout>
       </lightning-card>
       <lightning-card title="Partner" if:true={isLoaded}>
@@ -59,9 +92,9 @@
 
 
             <div class="slds-form-element slds-form-element_stacked">
-              <label class="slds-form-element__label" for="horizontal-form-element-id-03">Ship To</label>
+              <label class="slds-form-element__label" for="shipToName">Ship To</label>
               <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
-                <input type="text" id="horizontal-form-element-id-03" class="slds-input" value={shipToName} />
+                <input type="text" id="shipToName" class="slds-input" value={shipToName} />
                 <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Ship To"
                   onclick={getShipTo}>
                   <lightning-icon icon-name="utility:search" alternative-text="Approved"
@@ -118,7 +151,7 @@
       </lightning-card>
 
     </lightning-record-edit-form>
-
+    <c-quote-products record-id={recordId} oncreatequote={createQuote} header-discount={zDiscount}></c-quote-products>
   </lightning-modal-body>
   <lightning-modal-footer>
     <div class="footer-buttons">
