@@ -1,0 +1,18 @@
+.slds-input:read-only {
+    padding-left: var(--slds-c-input-spacing-horizontal-start, 0.75rem);
+    padding-left: 0.75rem;
+}
+
+.slds-input[readonly] {
+    --slds-c-input-spacing-horizontal-start: 0.75rem;
+}
+
+
+.input:read-only { 
+    background-color: #f17517;
+    padding-left: 0.75rem;
+ }
+
+ :host .p-left-large {
+    --lwc-spacingSmall: 2rem;
+}
